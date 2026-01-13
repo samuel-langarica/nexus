@@ -1,5 +1,6 @@
 import React from 'react';
 import { QRDisplayMockup, PhoneMockup } from './Mockups';
+import { BRAND, CONFIG } from '../../../shared/constants';
 
 const Hero = () => {
     return (
@@ -19,7 +20,7 @@ const Hero = () => {
                         marginBottom: '1rem',
                         display: 'block'
                     }}>
-                        Gestión de Filas por WhatsApp
+                        {BRAND.tagline}
                     </span>
                     <h1 style={{
                         fontSize: 'clamp(3rem, 5vw, 4.5rem)',
@@ -59,13 +60,13 @@ const Hero = () => {
                             cursor: 'pointer'
                         }}>
                             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '0.5rem', letterSpacing: '0.5px' }}>
-                                Básico
+                                {CONFIG.pricing.basic.name}
                             </div>
                             <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '0.25rem' }}>
-                                $399<span style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--text-secondary)' }}> MXN/mes</span>
+                                ${CONFIG.pricing.basic.price}<span style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--text-secondary)' }}> {CONFIG.pricing.basic.currency}/mes</span>
                             </div>
                             <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                                1,000 turnos/mes
+                                {CONFIG.pricing.basic.turnLimit.toLocaleString()} turnos/mes
                             </div>
                         </div>
 
@@ -95,10 +96,10 @@ const Hero = () => {
                                 Popular
                             </div>
                             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: '600', color: '#15803d', marginBottom: '0.5rem', letterSpacing: '0.5px' }}>
-                                Profesional
+                                {CONFIG.pricing.professional.name}
                             </div>
                             <div style={{ fontSize: '2rem', fontWeight: '800', color: '#166534', marginBottom: '0.25rem' }}>
-                                $1,799<span style={{ fontSize: '1rem', fontWeight: '600', color: '#15803d' }}> MXN/mes</span>
+                                ${CONFIG.pricing.professional.price}<span style={{ fontSize: '1rem', fontWeight: '600', color: '#15803d' }}> {CONFIG.pricing.professional.currency}/mes</span>
                             </div>
                             <div style={{ fontSize: '0.875rem', color: '#15803d' }}>
                                 Ilimitado + API

@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
+import { BRAND } from '../../../shared/constants';
 
 const Footer = () => {
     return (
@@ -12,7 +13,7 @@ const Footer = () => {
                             <Logo size="small" variant="white" />
                         </div>
                         <p style={{ lineHeight: '1.6' }}>
-                            Sistema de gestión de turnos inteligente para negocios que valoran el tiempo de sus clientes.
+                            {BRAND.description}
                         </p>
                     </div>
 
@@ -46,7 +47,7 @@ const Footer = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid #1e293b', paddingTop: '2rem', textAlign: 'center', fontSize: '0.875rem' }}>
-                    &copy; {new Date().getFullYear()} TurnoLibre. Todos los derechos reservados.
+                    &copy; {new Date().getFullYear()} {BRAND.name}. Todos los derechos reservados.
                 </div>
             </div>
         </footer>

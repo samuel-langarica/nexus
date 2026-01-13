@@ -1,4 +1,5 @@
 import React from 'react';
+import { CONFIG } from '../../../shared/constants';
 
 // Professional SVG Icons
 const Icons = {
@@ -89,9 +90,9 @@ const Icons = {
 const Pricing = () => {
     const plans = [
         {
-            name: 'Básico',
+            name: CONFIG.pricing.basic.name,
             subtitle: 'Para empezar',
-            price: '399',
+            price: CONFIG.pricing.basic.price,
             description: 'Perfecto para negocios que quieren empezar hoy. Usa tu celular o tablet.',
             cta: 'Probar Gratis 14 Días',
             popular: false,
@@ -100,7 +101,7 @@ const Pricing = () => {
                     title: 'Software',
                     features: [
                         { text: 'Dashboard para gestionar turnos', included: true, icon: 'Monitor', desc: 'Accede desde cualquier computadora o móvil del staff' },
-                        { text: '1,000 turnos/mes via WhatsApp', included: true, icon: 'WhatsApp', desc: 'Alertas automáticas a tus clientes' },
+                        { text: `${CONFIG.pricing.basic.turnLimit.toLocaleString()} turnos/mes via WhatsApp`, included: true, icon: 'WhatsApp', desc: 'Alertas automáticas a tus clientes' },
                         { text: 'Código QR digital', included: true, icon: 'QrCode', desc: 'Muestra el QR en tu celular o tablet' }
                     ]
                 },
@@ -134,9 +135,9 @@ const Pricing = () => {
             ctaStyle: 'secondary'
         },
         {
-            name: 'Profesional',
+            name: CONFIG.pricing.professional.name,
             subtitle: 'Software Premium',
-            price: '1,799',
+            price: CONFIG.pricing.professional.price,
             description: 'WhatsApp ilimitado, API completa e integraciones avanzadas',
             cta: 'Empezar con Profesional',
             popular: true,
