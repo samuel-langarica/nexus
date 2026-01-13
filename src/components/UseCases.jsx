@@ -64,7 +64,7 @@ const UseCases = () => {
                         color: 'var(--text-secondary)',
                         lineHeight: '1.6'
                     }}>
-                        Los casos más extremos: esperas de 2 horas vs. mesas que se llenan en minutos. Nexus funciona en ambos.
+                        Los casos más extremos: esperas de 2 horas vs. mesas que se llenan en minutos. TurnoLibre funciona en ambos.
                     </p>
                 </div>
 
@@ -220,7 +220,7 @@ const UseCases = () => {
                         maxWidth: '600px',
                         margin: '0 auto 2rem'
                     }}>
-                        Bancos, clínicas, tiendas, spas, talleres mecánicos... Si tus clientes esperan, Nexus elimina la frustración.
+                        Bancos, clínicas, tiendas, spas, talleres mecánicos... Si tus clientes esperan, TurnoLibre elimina la frustración.
                     </p>
                     <button className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2.5rem' }}>
                         Agenda una Demo

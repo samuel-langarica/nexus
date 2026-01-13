@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Nexus is a WhatsApp-based queue management system landing page. It's a React + Vite single-page application that showcases a flexible queue system with mockups for different industries (hospitals, retail, banks, government, restaurants).
+TurnoLibre is a WhatsApp-based queue management system landing page. It's a React + Vite single-page application that showcases a flexible queue system with mockups for different industries (hospitals, retail, banks, government, restaurants).
 
 ## Development Commands
 

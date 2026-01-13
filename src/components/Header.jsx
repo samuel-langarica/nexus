@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Button from './Button';
+import Logo from './Logo';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -15,15 +16,12 @@ const Header = () => {
     return (
         <header className={`nav-header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <div style={{ width: '32px', height: '32px', background: 'var(--primary-color)', borderRadius: '6px' }}></div>
-                    <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--primary-color)', letterSpacing: '-0.05em' }}>Nexus</span>
-                </div>
+                <Logo size="medium" />
 
                 <nav className="nav-links">
                     <a href="#como-funciona">Cómo Funciona</a>
-                    <a href="#problema">Beneficios</a>
-                    <a href="#solucion">Características</a>
+                    <a href="#pricing">Precios</a>
+                    <a href="#instalacion">Instalación</a>
                 </nav>
 
                 <div>

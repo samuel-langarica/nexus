@@ -1,46 +1,181 @@
 import React from 'react';
 
+// Professional SVG Icons
+const Icons = {
+    Monitor: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+            <circle cx="9" cy="9" r="1.5" fill="currentColor"></circle>
+            <circle cx="15" cy="9" r="1.5" fill="currentColor"></circle>
+        </svg>
+    ),
+    WhatsApp: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    ),
+    QrCode: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+            <rect x="5.5" y="5.5" width="2" height="2" fill="currentColor"></rect>
+            <rect x="16.5" y="5.5" width="2" height="2" fill="currentColor"></rect>
+            <rect x="5.5" y="16.5" width="2" height="2" fill="currentColor"></rect>
+            <path d="M14 14h3v3h-3z"></path>
+            <path d="M18 14h3v3h-3z"></path>
+            <path d="M14 18h3v3h-3z"></path>
+        </svg>
+    ),
+    Settings: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+    ),
+    Printer: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+            <line x1="9" y1="17" x2="15" y2="17"></line>
+            <line x1="9" y1="20" x2="15" y2="20"></line>
+        </svg>
+    ),
+    Tablet: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="9" y1="19" x2="15" y2="19"></line>
+            <path d="M8 6h8"></path>
+            <path d="M8 9h5"></path>
+        </svg>
+    ),
+    Code: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+        </svg>
+    ),
+    Email: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+    ),
+    Shield: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+        </svg>
+    ),
+    Zap: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+    ),
+    Users: () => (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+    )
+};
+
 const Pricing = () => {
     const plans = [
         {
-            name: 'Setup Rápido',
-            subtitle: 'Configúralo tú mismo',
+            name: 'Essential',
+            subtitle: 'Solo software',
             price: '399',
-            description: 'Perfecto para negocios pequeños que quieren empezar hoy',
-            cta: 'Empezar Ahora',
+            description: 'Perfecto para negocios que quieren empezar hoy con su propio hardware',
+            cta: 'Probar Gratis 14 Días',
             popular: false,
-            features: [
-                { text: 'Dashboard web responsive', included: true },
-                { text: 'QR impreso para clientes', included: true },
-                { text: 'Notificaciones WhatsApp ilimitadas', included: true },
-                { text: 'Configuración en 10 minutos', included: true },
-                { text: 'Soporte por email', included: true },
-                { text: 'API de integración', included: true },
-                { text: 'Tablet física para staff', included: false, note: 'Usa tu propio dispositivo' },
-                { text: 'Impresora térmica de tickets', included: false, note: 'QR estático incluido' },
-                { text: 'Instalación profesional', included: false, note: 'Autoservicio' }
+            categories: [
+                {
+                    title: 'Software',
+                    features: [
+                        { text: 'Dashboard para gestionar turnos', included: true, icon: 'Monitor', desc: 'Accede desde cualquier computadora o móvil del staff' },
+                        { text: 'Notificaciones WhatsApp ilimitadas', included: true, icon: 'WhatsApp', desc: 'Alertas automáticas a tus clientes' },
+                        { text: 'Código QR digital', included: true, icon: 'QrCode', desc: 'Clientes escanean y reciben su turno al instante' }
+                    ]
+                },
+                {
+                    title: 'Configuración',
+                    features: [
+                        { text: 'Setup guiado en 10 minutos', included: true, icon: 'Zap', desc: 'Empieza a operar hoy mismo' }
+                    ]
+                },
+                {
+                    title: 'Hardware',
+                    features: [
+                        { text: 'Usa tus propios dispositivos', included: false, icon: 'Tablet', note: 'No incluido' }
+                    ]
+                },
+                {
+                    title: 'Integraciones',
+                    features: [
+                        { text: 'API REST', included: false, icon: 'Code', note: 'Solo en Professional' }
+                    ]
+                },
+                {
+                    title: 'Soporte',
+                    features: [
+                        { text: 'Email (respuesta en 24-48hrs)', included: true, icon: 'Email' }
+                    ]
+                }
             ],
-            badge: 'Ideal para empezar',
+            badge: 'Ideal para Empezar',
             badgeColor: '#3b82f6',
             ctaStyle: 'secondary'
         },
         {
-            name: 'Setup Completo',
-            subtitle: 'Instalación profesional',
-            price: '1,999',
-            description: 'Para negocios que quieren la experiencia premium completa',
-            cta: 'Solicitar Demo',
+            name: 'Professional',
+            subtitle: 'Hardware + Software',
+            price: '1,799',
+            description: 'Solución completa llave en mano con instalación profesional',
+            cta: 'Agendar Instalación',
             popular: true,
-            features: [
-                { text: 'Todo de Setup Rápido, más:', included: true, bold: true },
-                { text: 'Tablet Android 10" para staff', included: true },
-                { text: 'Impresora térmica de tickets', included: true },
-                { text: 'Instalación y configuración completa', included: true },
-                { text: 'Capacitación del equipo presencial', included: true },
-                { text: 'Setup en 3 horas (en tu negocio)', included: true },
-                { text: 'Soporte técnico 24/7 por WhatsApp', included: true },
-                { text: 'Garantía de uptime 99.99%', included: true },
-                { text: 'Actualizaciones de hardware incluidas', included: true }
+            categories: [
+                {
+                    title: 'Software',
+                    features: [
+                        { text: 'Todo de Essential incluido', included: true, icon: 'Monitor', bold: true }
+                    ]
+                },
+                {
+                    title: 'Configuración',
+                    features: [
+                        { text: 'Instalación completa en tu negocio', included: true, icon: 'Settings', desc: 'Técnico configura todo el sistema en tu local' },
+                        { text: 'Capacitación presencial del equipo', included: true, icon: 'Users', desc: 'Entrenamos a tu staff en cómo usar el sistema' },
+                        { text: 'De cero a operación en 3 horas', included: true, icon: 'Zap', desc: 'Sistema funcionando la misma tarde' }
+                    ]
+                },
+                {
+                    title: 'Hardware Incluido',
+                    features: [
+                        { text: 'Tablet Android 10" dedicada', included: true, icon: 'Tablet', desc: 'Hardware profesional para tu staff' },
+                        { text: 'Impresora térmica de tickets', included: true, icon: 'Printer', desc: 'Imprime tickets físicos con QR único' },
+                        { text: 'Reemplazo de hardware sin costo', included: true, icon: 'Zap', desc: 'Upgrades y mantenimiento incluido' }
+                    ]
+                },
+                {
+                    title: 'Integraciones',
+                    features: [
+                        { text: 'API REST completa', included: true, icon: 'Code', highlight: true, desc: 'Conecta TurnoLibre con tus sistemas actuales' }
+                    ]
+                },
+                {
+                    title: 'Soporte Premium',
+                    features: [
+                        { text: 'WhatsApp 24/7 prioritario', included: true, icon: 'WhatsApp', desc: 'Línea directa, respuesta inmediata' },
+                        { text: 'Garantía de uptime 99.99%', included: true, icon: 'Shield', desc: 'Sistema siempre disponible con SLA' }
+                    ]
+                }
             ],
             badge: 'Más Popular',
             badgeColor: 'var(--primary-color)',
@@ -71,21 +206,21 @@ const Pricing = () => {
                         color: 'var(--text-main)',
                         fontWeight: '800'
                     }}>
-                        ¿Cómo quieres empezar?
+                        Elige tu plan
                     </h2>
                     <p style={{
                         fontSize: '1.125rem',
                         color: 'var(--text-secondary)',
                         lineHeight: '1.6'
                     }}>
-                        Mismo software poderoso. Elige el nivel de soporte que necesitas.
+                        Mismo software poderoso. Tú decides el nivel de soporte.
                     </p>
                 </div>
 
                 {/* Pricing Grid */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
                     gap: '2rem',
                     maxWidth: '1200px',
                     margin: '0 auto'
@@ -101,8 +236,8 @@ const Pricing = () => {
                             transform: plan.popular ? 'scale(1.05)' : 'scale(1)',
                             transition: 'transform 0.3s, box-shadow 0.3s'
                         }}>
-                            {/* Popular Badge */}
-                            {plan.popular && (
+                            {/* Badge */}
+                            {(plan.popular || plan.badge) && (
                                 <div style={{
                                     position: 'absolute',
                                     top: '-16px',
@@ -114,14 +249,14 @@ const Pricing = () => {
                                     borderRadius: '100px',
                                     fontWeight: '700',
                                     fontSize: '0.875rem',
-                                    boxShadow: '0 4px 12px rgba(37, 211, 102, 0.3)'
+                                    boxShadow: plan.popular ? '0 4px 12px rgba(37, 211, 102, 0.3)' : '0 4px 12px rgba(59, 130, 246, 0.3)'
                                 }}>
                                     {plan.badge}
                                 </div>
                             )}
 
                             {/* Plan Header */}
-                            <div style={{ marginBottom: '2rem', paddingTop: plan.popular ? '0.5rem' : '0' }}>
+                            <div style={{ marginBottom: '2rem', paddingTop: '0.5rem' }}>
                                 <h3 style={{
                                     fontSize: '1.75rem',
                                     fontWeight: '800',
@@ -153,14 +288,15 @@ const Pricing = () => {
                                         color: 'var(--text-secondary)',
                                         fontWeight: '600'
                                     }}>
-                                        MXN/mes
+                                        /mes
                                     </span>
                                 </div>
 
                                 <p style={{
-                                    fontSize: '0.875rem',
+                                    fontSize: '0.9375rem',
                                     color: 'var(--text-secondary)',
-                                    lineHeight: '1.5'
+                                    lineHeight: '1.5',
+                                    minHeight: '3rem'
                                 }}>
                                     {plan.description}
                                 </p>
@@ -172,61 +308,109 @@ const Pricing = () => {
                                 style={{
                                     width: '100%',
                                     marginBottom: '2rem',
-                                    fontSize: '1.125rem',
-                                    padding: '1rem'
+                                    fontSize: '1.0625rem',
+                                    padding: '1rem',
+                                    fontWeight: '700'
                                 }}
                             >
                                 {plan.cta}
                             </button>
 
-                            {/* Features List */}
+                            {/* Features by Category */}
                             <div style={{
                                 display: 'flex',
                                 flexDirection: 'column',
-                                gap: '0.875rem'
+                                gap: '1.75rem'
                             }}>
-                                {plan.features.map((feature, idx) => (
-                                    <div key={idx} style={{
-                                        display: 'flex',
-                                        alignItems: 'flex-start',
-                                        gap: '0.75rem',
-                                        opacity: feature.included ? 1 : 0.5
-                                    }}>
+                                {plan.categories.map((category, catIdx) => (
+                                    <div key={catIdx}>
+                                        {/* Category Title */}
                                         <div style={{
-                                            width: '20px',
-                                            height: '20px',
-                                            background: feature.included ? '#dcfce7' : '#f1f5f9',
-                                            borderRadius: '50%',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            color: feature.included ? '#16a34a' : '#94a3b8',
                                             fontSize: '0.75rem',
-                                            fontWeight: 'bold',
-                                            flexShrink: 0,
-                                            marginTop: '2px'
+                                            fontWeight: '700',
+                                            textTransform: 'uppercase',
+                                            letterSpacing: '1px',
+                                            color: '#64748b',
+                                            marginBottom: '0.75rem'
                                         }}>
-                                            {feature.included ? '✓' : '−'}
+                                            {category.title}
                                         </div>
-                                        <div style={{ flex: 1 }}>
-                                            <span style={{
-                                                color: feature.included ? 'var(--text-main)' : 'var(--text-secondary)',
-                                                fontSize: '0.9375rem',
-                                                lineHeight: '1.5',
-                                                fontWeight: feature.bold ? '700' : '400'
-                                            }}>
-                                                {feature.text}
-                                            </span>
-                                            {feature.note && (
-                                                <div style={{
-                                                    fontSize: '0.8125rem',
-                                                    color: 'var(--text-secondary)',
-                                                    marginTop: '0.25rem',
-                                                    fontStyle: 'italic'
-                                                }}>
-                                                    {feature.note}
-                                                </div>
-                                            )}
+
+                                        {/* Category Features */}
+                                        <div style={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            gap: '0.875rem'
+                                        }}>
+                                            {category.features.map((feature, idx) => {
+                                                const IconComponent = Icons[feature.icon];
+                                                return (
+                                                    <div key={idx} style={{
+                                                        display: 'flex',
+                                                        alignItems: 'flex-start',
+                                                        gap: '0.75rem',
+                                                        opacity: feature.included ? 1 : 0.6
+                                                    }}>
+                                                        {/* Icon */}
+                                                        <div style={{
+                                                            width: '20px',
+                                                            height: '20px',
+                                                            color: feature.included ? (feature.highlight ? 'var(--primary-color)' : '#16a34a') : '#94a3b8',
+                                                            flexShrink: 0,
+                                                            marginTop: '2px'
+                                                        }}>
+                                                            {IconComponent && <IconComponent />}
+                                                        </div>
+
+                                                        {/* Text */}
+                                                        <div style={{ flex: 1 }}>
+                                                            <div style={{
+                                                                color: feature.included ? 'var(--text-main)' : 'var(--text-secondary)',
+                                                                fontSize: '0.9375rem',
+                                                                lineHeight: '1.5',
+                                                                fontWeight: feature.bold ? '700' : '500'
+                                                            }}>
+                                                                {feature.text}
+                                                                {feature.highlight && (
+                                                                    <span style={{
+                                                                        marginLeft: '0.5rem',
+                                                                        background: 'var(--primary-color)',
+                                                                        color: '#fff',
+                                                                        padding: '0.125rem 0.5rem',
+                                                                        borderRadius: '4px',
+                                                                        fontSize: '0.75rem',
+                                                                        fontWeight: '700',
+                                                                        textTransform: 'uppercase',
+                                                                        letterSpacing: '0.5px'
+                                                                    }}>
+                                                                        Pro
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                            {feature.desc && (
+                                                                <div style={{
+                                                                    fontSize: '0.8125rem',
+                                                                    color: '#64748b',
+                                                                    marginTop: '0.25rem',
+                                                                    lineHeight: '1.4'
+                                                                }}>
+                                                                    {feature.desc}
+                                                                </div>
+                                                            )}
+                                                            {feature.note && (
+                                                                <div style={{
+                                                                    fontSize: '0.8125rem',
+                                                                    color: '#94a3b8',
+                                                                    marginTop: '0.25rem',
+                                                                    fontStyle: 'italic'
+                                                                }}>
+                                                                    {feature.note}
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 ))}
@@ -239,7 +423,7 @@ const Pricing = () => {
                 <div style={{
                     maxWidth: '700px',
                     margin: '3rem auto 0',
-                    background: '#dcfce7',
+                    background: 'linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%)',
                     border: '2px solid #86efac',
                     borderRadius: '16px',
                     padding: '1.75rem',
@@ -251,14 +435,14 @@ const Pricing = () => {
                         color: '#166534',
                         marginBottom: '0.5rem'
                     }}>
-                        💡 Empieza rápido, crece después
+                        Empieza gratis hoy, escala cuando quieras
                     </div>
                     <div style={{
                         fontSize: '1rem',
                         color: '#15803d',
                         lineHeight: '1.6'
                     }}>
-                        Comienza con Setup Rápido y upgradea a Setup Completo en cualquier momento. Sin penalización, sin fricción.
+                        Prueba Essential 14 días gratis. Upgrade a Professional en cualquier momento sin penalización.
                     </div>
                 </div>
 

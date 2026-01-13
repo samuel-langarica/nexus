@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Logo';
 
 const Footer = () => {
     return (
@@ -7,9 +8,8 @@ const Footer = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
 
                     <div>
-                        <div style={{ fontSize: '1.5rem', fontWeight: '800', color: '#fff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <div style={{ width: '24px', height: '24px', background: '#fff', borderRadius: '4px' }}></div>
-                            Nexus
+                        <div style={{ marginBottom: '1rem' }}>
+                            <Logo size="small" variant="white" />
                         </div>
                         <p style={{ lineHeight: '1.6' }}>
                             Sistema de gestión de turnos inteligente para negocios que valoran el tiempo de sus clientes.
@@ -46,7 +46,7 @@ const Footer = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid #1e293b', paddingTop: '2rem', textAlign: 'center', fontSize: '0.875rem' }}>
-                    &copy; {new Date().getFullYear()} Nexus Queue Systems. Todos los derechos reservados.
+                    &copy; {new Date().getFullYear()} TurnoLibre. Todos los derechos reservados.
                 </div>
             </div>
         </footer>

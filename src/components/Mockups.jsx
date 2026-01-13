@@ -18,13 +18,13 @@ export const TicketMockup = ({ number = "A047", time = "14:30" }) => (
     }}>
         <div style={{ position: 'absolute', top: '-5px', left: '50%', transform: 'translateX(-50%)', width: '20px', height: '20px', background: 'var(--bg-secondary)', borderRadius: '50%', boxShadow: 'inset 0 -2px 5px rgba(0,0,0,0.1)' }}></div>
         <div style={{ textAlign: 'center', fontFamily: 'monospace' }}>
-            <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '0.5rem', color: '#64748b' }}>Nexus Queue</div>
+            <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '0.5rem', color: '#64748b' }}>TurnoLibre</div>
             <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#0f172a', lineHeight: '1' }}>{number}</div>
             <div style={{ fontSize: '0.875rem', margin: '1rem 0', color: '#334155' }}>Suscríbete por WhatsApp</div>
             <div style={{ margin: '1rem auto' }}>
                 <img src={qrCode} alt="Scan to track" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
-            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{time} • Escanea para salir</div>
+            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>Emitido el 06-12-25 {time}</div>
         </div>
     </div>
 );
@@ -208,7 +208,7 @@ export const PhoneMockup = ({ state = "scan", preset = "general", customMessages
                             <div style={{ width: '32px', height: '32px', background: '#667eea', borderRadius: '6px' }}></div>
                             {/* Name and status */}
                             <div style={{ flex: 1 }}>
-                                <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>Nexus</div>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>TurnoLibre</div>
                                 <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)' }}>en línea</div>
                             </div>
                             {/* Header icons */}

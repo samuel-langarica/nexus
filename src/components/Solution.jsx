@@ -1,5 +1,5 @@
 import React from 'react';
-import installationImage from '../assets/installation.png';
+import installationDual from '../assets/installation-dual.png';
 
 const Solution = () => {
     const steps = [
@@ -33,22 +33,18 @@ const Solution = () => {
                     {/* Left Side - Installation Image */}
                     <div style={{
                         position: 'relative',
-                        minHeight: '500px',
+                        minHeight: '400px',
                         borderRadius: '16px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
                         overflow: 'hidden'
                     }}>
                         <img
-                            src={installationImage}
-                            alt="Técnico instalando Nexus Queue"
+                            src={installationDual}
+                            alt="Composición dual: autoservicio vs instalación profesional"
                             style={{
                                 width: '100%',
                                 height: '100%',
                                 objectFit: 'cover',
-                                borderRadius: '16px',
-                                boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.15)'
+                                borderRadius: '16px'
                             }}
                         />
                     </div>

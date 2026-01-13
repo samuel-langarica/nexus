@@ -34,35 +34,90 @@ const Hero = () => {
                     <p style={{
                         fontSize: '1.25rem',
                         color: 'var(--text-secondary)',
-                        marginBottom: '2.5rem',
-                        maxWidth: '500px',
+                        marginBottom: '2rem',
+                        maxWidth: '540px',
                         lineHeight: '1.6'
                     }}>
-                        Sistema de gestión de filas con WhatsApp. Elige entre setup rápido autoservicio o instalación profesional completa.
+                        Tus clientes esperan donde quieran. Tu equipo gestiona todo desde WhatsApp. Sin apps que instalar, sin hardware obligatorio.
                     </p>
 
-                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                    {/* Mini Plan Selector */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                        gap: '1rem',
+                        marginBottom: '2rem',
+                        maxWidth: '540px'
+                    }}>
+                        {/* Setup Rápido */}
+                        <div style={{
+                            background: '#fff',
+                            border: '2px solid #e2e8f0',
+                            borderRadius: '12px',
+                            padding: '1.25rem',
+                            transition: 'all 0.2s',
+                            cursor: 'pointer'
+                        }}>
+                            <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '0.5rem', letterSpacing: '0.5px' }}>
+                                Setup Rápido
+                            </div>
+                            <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '0.25rem' }}>
+                                $399<span style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--text-secondary)' }}> MXN/mes</span>
+                            </div>
+                            <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                                Configúralo tú mismo
+                            </div>
+                        </div>
+
+                        {/* Setup Completo */}
+                        <div style={{
+                            background: 'linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%)',
+                            border: '2px solid var(--primary-color)',
+                            borderRadius: '12px',
+                            padding: '1.25rem',
+                            transition: 'all 0.2s',
+                            cursor: 'pointer',
+                            position: 'relative'
+                        }}>
+                            <div style={{
+                                position: 'absolute',
+                                top: '-8px',
+                                right: '12px',
+                                background: 'var(--primary-color)',
+                                color: '#fff',
+                                fontSize: '0.625rem',
+                                fontWeight: '700',
+                                padding: '0.25rem 0.625rem',
+                                borderRadius: '4px',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                            }}>
+                                Popular
+                            </div>
+                            <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: '600', color: '#15803d', marginBottom: '0.5rem', letterSpacing: '0.5px' }}>
+                                Setup Completo
+                            </div>
+                            <div style={{ fontSize: '2rem', fontWeight: '800', color: '#166534', marginBottom: '0.25rem' }}>
+                                $1,999<span style={{ fontSize: '1rem', fontWeight: '600', color: '#15803d' }}> MXN/mes</span>
+                            </div>
+                            <div style={{ fontSize: '0.875rem', color: '#15803d' }}>
+                                Instalación profesional
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
                         <button className="btn btn-primary">
-                            Ver Opciones
+                            Ver Planes Completos
                         </button>
                         <button className="btn btn-secondary">
                             Ver Demo
                         </button>
                     </div>
 
-                    <div style={{ marginTop: '3rem', display: 'flex', gap: '2rem', fontSize: '0.875rem', color: 'var(--text-secondary)', flexWrap: 'wrap' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>✓</div>
-                            <span>Desde $399/mes</span>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>✓</div>
-                            <span>Sin Apps</span>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>✓</div>
-                            <span>Setup flexible</span>
-                        </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                        <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a', fontSize: '0.75rem', fontWeight: 'bold' }}>✓</div>
+                        <span style={{ fontWeight: '600' }}>Mismo software potente en ambos planes</span>
                     </div>
                 </div>
 
