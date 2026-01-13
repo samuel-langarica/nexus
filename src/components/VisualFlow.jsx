@@ -80,7 +80,7 @@ const VisualFlow = () => {
                                 justifyContent: 'center',
                                 fontWeight: 'bold',
                                 fontSize: '1.25rem',
-                                marginBottom: '2rem',
+                                marginBottom: '3rem',
                                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                             }}>
                                 {step.id}

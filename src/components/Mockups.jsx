@@ -180,7 +180,7 @@ export const PhoneMockup = ({ state = "scan", preset = "general", customMessages
                             <div style={{ position: 'absolute', bottom: '-2px', left: '-2px', width: '20px', height: '20px', borderBottom: '4px solid #25D366', borderLeft: '4px solid #25D366', borderRadius: '0 0 0 4px' }}></div>
                             <div style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '20px', height: '20px', borderBottom: '4px solid #25D366', borderRight: '4px solid #25D366', borderRadius: '0 0 4px 0' }}></div>
                         </div>
-                        <div style={{ position: 'absolute', bottom: '80px', color: '#fff', fontSize: '0.875rem', fontWeight: '500', background: 'rgba(0,0,0,0.6)', padding: '6px 14px', borderRadius: '20px', zIndex: 5, backdropFilter: 'blur(4px)' }}>Escaneando código...</div>
+                        <div style={{ position: 'absolute', bottom: '110px', color: '#fff', fontSize: '0.875rem', fontWeight: '500', background: 'rgba(0,0,0,0.6)', padding: '6px 14px', borderRadius: '20px', zIndex: 5, backdropFilter: 'blur(4px)' }}>Escaneando código...</div>
 
                         {/* Camera Controls Mockup */}
                         <div style={{ position: 'absolute', bottom: '30px', width: '60px', height: '60px', borderRadius: '50%', border: '4px solid #fff', zIndex: 5 }}></div>
@@ -204,8 +204,22 @@ export const PhoneMockup = ({ state = "scan", preset = "general", customMessages
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M19 12H5M12 19l-7-7 7-7" />
                             </svg>
-                            {/* Profile picture - same as header logo */}
-                            <div style={{ width: '32px', height: '32px', background: '#667eea', borderRadius: '6px' }}></div>
+                            {/* Profile picture - TurnoLibre Logo */}
+                            <div style={{
+                                width: '32px',
+                                height: '32px',
+                                background: '#25D366',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: '800',
+                                fontSize: '0.85rem',
+                                color: '#fff',
+                                boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+                            }}>
+                                TL
+                            </div>
                             {/* Name and status */}
                             <div style={{ flex: 1 }}>
                                 <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>TurnoLibre</div>

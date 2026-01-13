@@ -55,14 +55,14 @@ const Solution = () => {
                             left: '20px',
                             background: '#3b82f6',
                             color: '#fff',
-                            padding: '0.75rem 1.5rem',
-                            borderRadius: '12px',
+                            padding: '0.4rem 1.25rem',
+                            borderRadius: '100px',
                             fontWeight: '700',
-                            fontSize: '1rem',
-                            boxShadow: '0 4px 12px rgba(59, 130, 246, 0.4)',
-                            border: '2px solid #fff'
+                            fontSize: '0.8rem',
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                            whiteSpace: 'nowrap'
                         }}>
-                            Essential
+                            Ideal para empezar
                         </div>
 
                         {/* Pro Badge - Right */}
@@ -72,14 +72,14 @@ const Solution = () => {
                             right: '20px',
                             background: 'var(--primary-color)',
                             color: '#fff',
-                            padding: '0.75rem 1.5rem',
-                            borderRadius: '12px',
+                            padding: '0.4rem 1.25rem',
+                            borderRadius: '100px',
                             fontWeight: '700',
-                            fontSize: '1rem',
-                            boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
-                            border: '2px solid #fff'
+                            fontSize: '0.8rem',
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                            whiteSpace: 'nowrap'
                         }}>
-                            Pro
+                            Más Popular
                         </div>
                     </div>
 
