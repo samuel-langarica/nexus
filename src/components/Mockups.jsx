@@ -216,3 +216,85 @@ export const RichScreenMockup = ({ number = "A047" }) => (
         </div>
     </div>
 );
+
+// Terminal/Dashboard mockup for action panel
+export const TerminalMockup = ({ nextTicket = "A053" }) => (
+    <div style={{
+        width: '420px',
+        height: '280px',
+        background: '#1e1e1e',
+        borderRadius: '12px',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        border: '1px solid #2d2d2d',
+        overflow: 'hidden',
+        fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace'
+    }}>
+        {/* Terminal Header */}
+        <div style={{
+            height: '32px',
+            background: '#2d2d2d',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0 12px',
+            gap: '8px',
+            borderBottom: '1px solid #3d3d3d'
+        }}>
+            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }}></div>
+            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
+            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
+            <span style={{ marginLeft: '8px', fontSize: '0.75rem', color: '#8b8b8b' }}>nexus-control</span>
+        </div>
+
+        {/* Terminal Content */}
+        <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {/* Next Ticket Display */}
+            <div style={{
+                background: '#2d2d2d',
+                borderRadius: '8px',
+                padding: '16px',
+                border: '1px solid #3d3d3d'
+            }}>
+                <div style={{ fontSize: '0.7rem', color: '#6b7280', marginBottom: '8px', letterSpacing: '1px' }}>
+                    SIGUIENTE TURNO
+                </div>
+                <div style={{
+                    fontSize: '3rem',
+                    fontWeight: '800',
+                    color: '#25D366',
+                    textShadow: '0 0 20px rgba(37, 211, 102, 0.3)',
+                    letterSpacing: '2px'
+                }}>
+                    {nextTicket}
+                </div>
+            </div>
+
+            {/* Action Button */}
+            <button style={{
+                background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '16px',
+                fontSize: '1rem',
+                fontWeight: '700',
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(59, 130, 246, 0.4)',
+                transition: 'transform 0.2s',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+            }}>
+                + Generar Nuevo Ticket
+            </button>
+
+            {/* Stats */}
+            <div style={{ display: 'flex', gap: '12px', fontSize: '0.7rem' }}>
+                <div style={{ color: '#6b7280' }}>
+                    <span style={{ color: '#25D366' }}>●</span> Cola: <span style={{ color: '#fff' }}>8 personas</span>
+                </div>
+                <div style={{ color: '#6b7280' }}>
+                    Promedio: <span style={{ color: '#fff' }}>7 min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+);

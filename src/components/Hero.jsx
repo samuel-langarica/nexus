@@ -1,5 +1,5 @@
 import React from 'react';
-import { TicketMockup, PhoneMockup, TabletMockup, RichScreenMockup } from './Mockups';
+import { TicketMockup, PhoneMockup } from './Mockups';
 
 const Hero = () => {
     return (
@@ -62,7 +62,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* Unified Ecosystem Visual */}
+                {/* Simple Hero Visual - Ticket + Phone */}
                 <div className="hero-visual" style={{
                     position: 'relative',
                     height: '600px',
@@ -70,9 +70,9 @@ const Hero = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    perspective: '1200px' // Increased perspective for better depth
+                    gap: '3rem'
                 }}>
-                    {/* Abstract Background Blobs */}
+                    {/* Abstract Background */}
                     <div style={{
                         position: 'absolute',
                         width: '100%',
@@ -84,65 +84,35 @@ const Hero = () => {
                         zIndex: 0
                     }}></div>
 
-                    {/* 3D Composition Container */}
+                    {/* Ticket - Left */}
                     <div style={{
                         position: 'relative',
-                        width: '100%',
-                        maxWidth: '600px', // Constrain width to prevent giant scaling
-                        height: '100%',
-                        transformStyle: 'preserve-3d',
-                        transform: 'rotateY(-12deg) rotateX(8deg)', // Subtler rotation
-                        transition: 'transform 0.5s ease-out'
+                        zIndex: 2,
+                        transform: 'scale(1.1)',
+                        filter: 'drop-shadow(10px 20px 30px rgba(0,0,0,0.15))'
                     }}>
-                        {/* 1. Tablet (Back Layer - Left) */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '0%',
-                            zIndex: 1,
-                            transform: 'translateY(-60%) translateZ(-40px) scale(0.9)', // Centered vertically relative to container
-                            filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))'
-                        }}>
-                            <TabletMockup />
-                        </div>
+                        <TicketMockup number="A047" />
+                    </div>
 
-                        {/* 2. Screen (Back Layer - Right) */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '15%',
-                            right: '5%', // Adjusted from -50px to be contained
-                            zIndex: 2,
-                            transform: 'translateZ(-60px) scale(0.8)',
-                            filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))',
-                            opacity: 0.95
-                        }}>
-                            <RichScreenMockup number="A047" />
-                        </div>
+                    {/* Arrow/Connection Indicator */}
+                    <div style={{
+                        position: 'relative',
+                        zIndex: 1,
+                        fontSize: '3rem',
+                        color: 'var(--primary-color)',
+                        opacity: 0.3
+                    }}>
+                        →
+                    </div>
 
-                        {/* 3. Phone (Front Layer - Right Center) */}
-                        <div style={{
-                            position: 'absolute',
-                            bottom: '10%',
-                            right: '15%',
-                            zIndex: 10,
-                            transform: 'translateZ(60px) scale(0.85)', // Reduced scale
-                            filter: 'drop-shadow(30px 50px 60px rgba(0,0,0,0.35))'
-                        }}>
-                            <PhoneMockup state="chat_alert" />
-                        </div>
-
-                        {/* 4. Ticket (Front Layer - Left Center) */}
-                        <div style={{
-                            position: 'absolute',
-                            bottom: '20%',
-                            left: '10%',
-                            zIndex: 5,
-                            transform: 'rotate(-5deg) translateZ(20px) scale(0.9)',
-                            filter: 'drop-shadow(10px 20px 30px rgba(0,0,0,0.15))'
-                        }}>
-                            <TicketMockup />
-                        </div>
-
+                    {/* Phone - Right */}
+                    <div style={{
+                        position: 'relative',
+                        zIndex: 2,
+                        transform: 'scale(1.1)',
+                        filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))'
+                    }}>
+                        <PhoneMockup state="chat_alert" />
                     </div>
                 </div>
             </div>
