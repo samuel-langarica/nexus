@@ -47,6 +47,40 @@ const Solution = () => {
                                 borderRadius: '16px'
                             }}
                         />
+
+                        {/* Essential Badge - Left */}
+                        <div style={{
+                            position: 'absolute',
+                            top: '20px',
+                            left: '20px',
+                            background: '#3b82f6',
+                            color: '#fff',
+                            padding: '0.75rem 1.5rem',
+                            borderRadius: '12px',
+                            fontWeight: '700',
+                            fontSize: '1rem',
+                            boxShadow: '0 4px 12px rgba(59, 130, 246, 0.4)',
+                            border: '2px solid #fff'
+                        }}>
+                            Essential
+                        </div>
+
+                        {/* Pro Badge - Right */}
+                        <div style={{
+                            position: 'absolute',
+                            top: '20px',
+                            right: '20px',
+                            background: 'var(--primary-color)',
+                            color: '#fff',
+                            padding: '0.75rem 1.5rem',
+                            borderRadius: '12px',
+                            fontWeight: '700',
+                            fontSize: '1rem',
+                            boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+                            border: '2px solid #fff'
+                        }}>
+                            Pro
+                        </div>
                     </div>
 
                     {/* Right Side - Content */}
