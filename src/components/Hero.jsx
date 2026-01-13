@@ -63,48 +63,58 @@ const Hero = () => {
                 </div>
 
                 {/* Unified Ecosystem Visual */}
-                <div style={{
+                <div className="hero-visual" style={{
                     position: 'relative',
                     height: '600px',
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    perspective: '1000px' // Stronger perspective
+                    perspective: '1200px' // Increased perspective for better depth
                 }}>
                     {/* Abstract Background Blobs */}
-                    <div style={{ position: 'absolute', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(37,211,102,0.1) 0%, rgba(255,255,255,0) 70%)', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0 }}></div>
+                    <div style={{
+                        position: 'absolute',
+                        width: '100%',
+                        height: '100%',
+                        background: 'radial-gradient(circle, rgba(37,211,102,0.08) 0%, rgba(255,255,255,0) 70%)',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        zIndex: 0
+                    }}></div>
 
                     {/* 3D Composition Container */}
                     <div style={{
                         position: 'relative',
                         width: '100%',
+                        maxWidth: '600px', // Constrain width to prevent giant scaling
                         height: '100%',
                         transformStyle: 'preserve-3d',
-                        transform: 'rotateY(-15deg) rotateX(5deg)',
+                        transform: 'rotateY(-12deg) rotateX(8deg)', // Subtler rotation
                         transition: 'transform 0.5s ease-out'
                     }}>
                         {/* 1. Tablet (Back Layer - Left) */}
                         <div style={{
                             position: 'absolute',
-                            top: '200px',
-                            left: '0px',
+                            top: '50%',
+                            left: '0%',
                             zIndex: 1,
-                            transform: 'scale(0.85) translateZ(-60px)',
-                            filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.25))'
+                            transform: 'translateY(-60%) translateZ(-40px) scale(0.9)', // Centered vertically relative to container
+                            filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))'
                         }}>
                             <TabletMockup />
                         </div>
 
-                        {/* 2. Screen (Back Layer - Right) - Reusing RichScreenMockup for context */}
+                        {/* 2. Screen (Back Layer - Right) */}
                         <div style={{
                             position: 'absolute',
-                            top: '100px',
-                            right: '-50px',
+                            top: '15%',
+                            right: '5%', // Adjusted from -50px to be contained
                             zIndex: 2,
-                            transform: 'scale(0.75) translateZ(-80px)',
-                            filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.25))',
-                            opacity: 0.9
+                            transform: 'translateZ(-60px) scale(0.8)',
+                            filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))',
+                            opacity: 0.95
                         }}>
                             <RichScreenMockup number="A047" />
                         </div>
@@ -112,11 +122,11 @@ const Hero = () => {
                         {/* 3. Phone (Front Layer - Right Center) */}
                         <div style={{
                             position: 'absolute',
-                            bottom: '80px',
-                            right: '50px',
-                            zIndex: 4,
-                            transform: 'scale(1.0) translateZ(80px)',
-                            filter: 'drop-shadow(20px 40px 50px rgba(0,0,0,0.3))'
+                            bottom: '10%',
+                            right: '15%',
+                            zIndex: 10,
+                            transform: 'translateZ(60px) scale(0.85)', // Reduced scale
+                            filter: 'drop-shadow(30px 50px 60px rgba(0,0,0,0.35))'
                         }}>
                             <PhoneMockup state="chat_alert" />
                         </div>
@@ -124,10 +134,10 @@ const Hero = () => {
                         {/* 4. Ticket (Front Layer - Left Center) */}
                         <div style={{
                             position: 'absolute',
-                            bottom: '150px',
-                            left: '80px',
-                            zIndex: 3,
-                            transform: 'rotate(-10deg) translateZ(30px) scale(0.9)',
+                            bottom: '20%',
+                            left: '10%',
+                            zIndex: 5,
+                            transform: 'rotate(-5deg) translateZ(20px) scale(0.9)',
                             filter: 'drop-shadow(10px 20px 30px rgba(0,0,0,0.15))'
                         }}>
                             <TicketMockup />
