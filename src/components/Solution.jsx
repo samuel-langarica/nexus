@@ -5,18 +5,18 @@ const Solution = () => {
     const steps = [
         {
             number: '1',
-            title: 'Agenda tu instalación',
-            desc: 'Elegimos el mejor horario para no interrumpir tu operación'
+            title: 'Elige tu setup',
+            desc: 'Rápido (autoservicio) o Completo (instalación profesional)'
         },
         {
             number: '2',
-            title: 'Llega nuestro equipo',
-            desc: 'Instalamos y configuramos todo el hardware en 2 horas'
+            title: 'Configura o instalamos',
+            desc: 'Configuras en 10 min o nuestro equipo instala en tu negocio'
         },
         {
             number: '3',
-            title: 'Capacitamos a tu staff',
-            desc: '15 minutos de entrenamiento y están listos para operar'
+            title: 'Ya estás operando',
+            desc: 'Tu equipo gestiona la fila desde el primer momento'
         }
     ];
 
@@ -74,7 +74,7 @@ const Solution = () => {
                             color: 'var(--text-main)',
                             fontWeight: '800'
                         }}>
-                            3 horas. Eso es todo lo que necesitamos.
+                            Empieza como tú quieras.
                         </h2>
 
                         <p style={{
@@ -83,7 +83,7 @@ const Solution = () => {
                             marginBottom: '3rem',
                             lineHeight: '1.6'
                         }}>
-                            Desde que agendas hasta que tu equipo está operando el sistema. Sin complicaciones.
+                            Setup autoservicio en 10 minutos o instalación profesional completa en 3 horas. Tú decides.
                         </p>
 
                         {/* Steps List */}
@@ -156,10 +156,10 @@ const Solution = () => {
                             </div>
                             <div>
                                 <div style={{ fontWeight: '700', color: '#166534', marginBottom: '0.25rem' }}>
-                                    Instalación sin costo adicional
+                                    Sin costos ocultos
                                 </div>
                                 <div style={{ fontSize: '0.875rem', color: '#15803d' }}>
-                                    Incluido en tu plan mensual
+                                    Todo incluido en tu plan mensual, sin sorpresas
                                 </div>
                             </div>
                         </div>

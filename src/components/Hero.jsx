@@ -38,26 +38,30 @@ const Hero = () => {
                         maxWidth: '500px',
                         lineHeight: '1.6'
                     }}>
-                        Nexus moderniza tu establecimiento con tickets físicos, notificaciones por WhatsApp y un dashboard inteligente. Todo conectado.
+                        Sistema de gestión de filas con WhatsApp. Elige entre setup rápido autoservicio o instalación profesional completa.
                     </p>
 
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                         <button className="btn btn-primary">
-                            Empezar Ahora
+                            Ver Opciones
                         </button>
                         <button className="btn btn-secondary">
-                            Ver Precios
+                            Ver Demo
                         </button>
                     </div>
 
-                    <div style={{ marginTop: '3rem', display: 'flex', gap: '2rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                    <div style={{ marginTop: '3rem', display: 'flex', gap: '2rem', fontSize: '0.875rem', color: 'var(--text-secondary)', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>✓</div>
+                            <span>Desde $399/mes</span>
+                        </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                             <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>✓</div>
                             <span>Sin Apps</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                             <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>✓</div>
-                            <span>Instalación en 5 min</span>
+                            <span>Setup flexible</span>
                         </div>
                     </div>
                 </div>

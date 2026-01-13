@@ -8,11 +8,11 @@ const EstablishmentView = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
                     <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1.5rem', color: '#fff' }}>
-                        Control total para tu equipo
+                        Hardware profesional disponible
                     </h2>
                     <p style={{ opacity: 0.9, fontSize: '1.25rem', lineHeight: '1.6', fontWeight: '500' }}>
-                        Otros te venden hardware caro por separado.<br />
-                        Nosotros lo incluimos en tu plan mensual.
+                        Con el plan Setup Completo, todo el hardware está incluido.<br />
+                        Sin compras adicionales, solo una mensualidad.
                     </p>
                 </div>
 
@@ -95,9 +95,12 @@ const EstablishmentView = () => {
                     padding: '2.5rem',
                     border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}>
-                    <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', textAlign: 'center' }}>
-                        Todo incluido. Sin sorpresas.
+                    <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', textAlign: 'center' }}>
+                        Incluido en Setup Completo
                     </h3>
+                    <p style={{ textAlign: 'center', opacity: 0.8, marginBottom: '2rem', fontSize: '0.9375rem' }}>
+                        Hardware profesional + instalación en una sola mensualidad
+                    </p>
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -158,7 +161,7 @@ const EstablishmentView = () => {
                                 color: '#16a34a',
                                 flexShrink: 0
                             }}>✓</div>
-                            <span>Soporte técnico</span>
+                            <span>Soporte técnico 24/7</span>
                         </div>
                     </div>
                 </div>
