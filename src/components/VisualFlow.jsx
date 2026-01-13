@@ -6,19 +6,19 @@ const VisualFlow = () => {
         {
             id: 1,
             title: "Toma tu turno",
-            desc: "Ticket impreso con impresora térmica (Plan Completo) o escanea QR fijo del negocio (Plan Rápido). Sin apps, sin registros.",
+            desc: "Escanea el código QR en la entrada y recibe tu número al instante.",
             component: <TicketMockup number="A052" />
         },
         {
             id: 2,
             title: "Escanea para unirte",
-            desc: "El QR abre WhatsApp automáticamente. Sin apps que instalar, sin registros.",
+            desc: "El QR abre WhatsApp automáticamente. Sin apps, sin registros.",
             component: <PhoneMockup state="scan" />
         },
         {
             id: 3,
             title: "Espera donde quieras",
-            desc: "Recibe notificación cuando es tu turno. Ve al bar, da una vuelta o relájate.",
+            desc: "Recibe alertas automáticas. Ve al bar, da una vuelta o relájate.",
             component: <PhoneMockup state="chat_welcome" preset="restaurant" />
         }
     ];

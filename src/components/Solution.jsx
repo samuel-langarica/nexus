@@ -26,7 +26,7 @@ const Solution = () => {
                 {/* Split Screen Layout */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                     gap: '4rem',
                     alignItems: 'center'
                 }}>

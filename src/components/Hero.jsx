@@ -19,7 +19,7 @@ const Hero = () => {
                         marginBottom: '1rem',
                         display: 'block'
                     }}>
-                        Sistema de Gestión de Filas
+                        Gestión de Filas por WhatsApp
                     </span>
                     <h1 style={{
                         fontSize: 'clamp(3rem, 5vw, 4.5rem)',
@@ -28,8 +28,8 @@ const Hero = () => {
                         color: 'var(--text-main)',
                         letterSpacing: '-1px'
                     }}>
-                        El fin de las <br />
-                        <span style={{ color: 'var(--primary-color)' }}>filas caóticas.</span>
+                        Tus clientes esperan <br />
+                        <span style={{ color: 'var(--accent-color)' }}>desde WhatsApp.</span>
                     </h1>
                     <p style={{
                         fontSize: '1.25rem',
@@ -38,7 +38,7 @@ const Hero = () => {
                         maxWidth: '540px',
                         lineHeight: '1.6'
                     }}>
-                        Tus clientes esperan donde quieran. Tu equipo gestiona todo desde WhatsApp. Sin apps que instalar, sin hardware obligatorio.
+                        <strong>Clientes reciben su turno por WhatsApp.</strong> Esperan donde quieran, reciben alertas automáticas, y llegan justo a tiempo. Sin apps, sin registros, sin filas físicas.
                     </p>
 
                     {/* Mini Plan Selector */}
@@ -49,7 +49,7 @@ const Hero = () => {
                         marginBottom: '2rem',
                         maxWidth: '540px'
                     }}>
-                        {/* Setup Rápido */}
+                        {/* Básico */}
                         <div style={{
                             background: '#fff',
                             border: '2px solid #e2e8f0',
@@ -59,17 +59,17 @@ const Hero = () => {
                             cursor: 'pointer'
                         }}>
                             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '0.5rem', letterSpacing: '0.5px' }}>
-                                Setup Rápido
+                                Básico
                             </div>
                             <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '0.25rem' }}>
                                 $399<span style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--text-secondary)' }}> MXN/mes</span>
                             </div>
                             <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                                Configúralo tú mismo
+                                Solo software
                             </div>
                         </div>
 
-                        {/* Setup Completo */}
+                        {/* Profesional */}
                         <div style={{
                             background: 'linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%)',
                             border: '2px solid var(--primary-color)',
@@ -95,23 +95,23 @@ const Hero = () => {
                                 Popular
                             </div>
                             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: '600', color: '#15803d', marginBottom: '0.5rem', letterSpacing: '0.5px' }}>
-                                Setup Completo
+                                Profesional
                             </div>
                             <div style={{ fontSize: '2rem', fontWeight: '800', color: '#166534', marginBottom: '0.25rem' }}>
-                                $1,999<span style={{ fontSize: '1rem', fontWeight: '600', color: '#15803d' }}> MXN/mes</span>
+                                $1,799<span style={{ fontSize: '1rem', fontWeight: '600', color: '#15803d' }}> MXN/mes</span>
                             </div>
                             <div style={{ fontSize: '0.875rem', color: '#15803d' }}>
-                                Instalación profesional
+                                Hardware + Software
                             </div>
                         </div>
                     </div>
 
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
                         <button className="btn btn-primary">
-                            Ver Planes Completos
+                            Prueba 14 Días Gratis
                         </button>
                         <button className="btn btn-secondary">
-                            Ver Demo
+                            Ver Demo en Vivo
                         </button>
                     </div>
 
@@ -124,7 +124,8 @@ const Hero = () => {
                 {/* Simple Hero Visual - Ticket + Phone */}
                 <div className="hero-visual" style={{
                     position: 'relative',
-                    height: '600px',
+                    minHeight: '500px',
+                    height: 'auto',
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
@@ -155,13 +156,39 @@ const Hero = () => {
 
                     {/* Arrow/Connection Indicator */}
                     <div style={{
-                        position: 'relative',
-                        zIndex: 1,
-                        fontSize: '3rem',
-                        color: 'var(--primary-color)',
-                        opacity: 0.3
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        zIndex: 1
                     }}>
-                        →
+                        <span style={{
+                            fontSize: '0.75rem',
+                            color: 'var(--text-secondary)',
+                            fontWeight: '600',
+                            textTransform: 'uppercase',
+                            letterSpacing: '1px'
+                        }}>
+                            Escanea
+                        </span>
+                        <div style={{
+                            width: '60px',
+                            height: '3px',
+                            background: 'linear-gradient(90deg, var(--accent-color), var(--primary-color))',
+                            position: 'relative',
+                            borderRadius: '2px'
+                        }}>
+                            <div style={{
+                                position: 'absolute',
+                                right: '-8px',
+                                top: '-5px',
+                                width: '0',
+                                height: '0',
+                                borderLeft: '12px solid var(--primary-color)',
+                                borderTop: '6px solid transparent',
+                                borderBottom: '6px solid transparent'
+                            }} />
+                        </div>
                     </div>
 
                     {/* Phone - Right */}

@@ -89,7 +89,7 @@ const Icons = {
 const Pricing = () => {
     const plans = [
         {
-            name: 'Essential',
+            name: 'Básico',
             subtitle: 'Solo software',
             price: '399',
             description: 'Perfecto para negocios que quieren empezar hoy con su propio hardware',
@@ -119,7 +119,7 @@ const Pricing = () => {
                 {
                     title: 'Integraciones',
                     features: [
-                        { text: 'API REST', included: false, icon: 'Code', note: 'Solo en Professional' }
+                        { text: 'API REST', included: false, icon: 'Code', note: 'Solo en Profesional' }
                     ]
                 },
                 {
@@ -134,7 +134,7 @@ const Pricing = () => {
             ctaStyle: 'secondary'
         },
         {
-            name: 'Professional',
+            name: 'Profesional',
             subtitle: 'Hardware + Software',
             price: '1,799',
             description: 'Solución completa llave en mano con instalación profesional',
@@ -144,7 +144,7 @@ const Pricing = () => {
                 {
                     title: 'Software',
                     features: [
-                        { text: 'Todo de Essential incluido', included: true, icon: 'Monitor', bold: true }
+                        { text: 'Todo de Básico incluido', included: true, icon: 'Monitor', bold: true }
                     ]
                 },
                 {
@@ -419,6 +419,22 @@ const Pricing = () => {
                     ))}
                 </div>
 
+                {/* Trust Signals */}
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '3rem',
+                    flexWrap: 'wrap',
+                    marginTop: '3rem',
+                    fontSize: '0.9375rem',
+                    color: 'var(--text-secondary)',
+                    fontWeight: '500'
+                }}>
+                    <span>✓ Cancela cuando quieras</span>
+                    <span>✓ Sin contratos anuales</span>
+                    <span>✓ Datos 100% seguros</span>
+                </div>
+
                 {/* Upsell Message */}
                 <div style={{
                     maxWidth: '700px',
@@ -442,7 +458,7 @@ const Pricing = () => {
                         color: '#15803d',
                         lineHeight: '1.6'
                     }}>
-                        Prueba Essential 14 días gratis. Upgrade a Professional en cualquier momento sin penalización.
+                        Prueba Básico 14 días gratis. Upgrade a Profesional en cualquier momento sin penalización.
                     </div>
                 </div>
 

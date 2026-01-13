@@ -19,8 +19,8 @@ export const TicketMockup = ({ number = "A047", time = "14:30" }) => (
         <div style={{ position: 'absolute', top: '-5px', left: '50%', transform: 'translateX(-50%)', width: '20px', height: '20px', background: 'var(--bg-secondary)', borderRadius: '50%', boxShadow: 'inset 0 -2px 5px rgba(0,0,0,0.1)' }}></div>
         <div style={{ textAlign: 'center', fontFamily: 'monospace' }}>
             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '0.5rem', color: '#64748b' }}>TurnoLibre</div>
-            <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#0f172a', lineHeight: '1' }}>{number}</div>
-            <div style={{ fontSize: '0.875rem', margin: '1rem 0', color: '#334155' }}>Suscríbete por WhatsApp</div>
+            gestionar <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#0f172a', lineHeight: '1' }}>{number}</div>
+            {/* <div style={{ fontSize: '0.875rem', margin: '1rem 0', color: '#334155' }}>Suscríbete por WhatsApp</div> */}
             <div style={{ margin: '1rem auto' }}>
                 <img src={qrCode} alt="Scan to track" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
