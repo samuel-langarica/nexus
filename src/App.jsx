@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import VisualFlow from './components/VisualFlow';
 import EstablishmentView from './components/EstablishmentView';
 import Solution from './components/Solution';
+import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <VisualFlow />
         <EstablishmentView />
         <Solution />
+        <Pricing />
       </main>
       <Footer />
     </div>

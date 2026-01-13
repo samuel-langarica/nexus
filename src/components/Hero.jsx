@@ -112,7 +112,7 @@ const Hero = () => {
                         transform: 'scale(1.1)',
                         filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))'
                     }}>
-                        <PhoneMockup state="chat_alert" />
+                        <PhoneMockup state="chat_welcome" />
                     </div>
                 </div>
             </div>

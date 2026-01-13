@@ -1,192 +1,167 @@
 import React from 'react';
 
 const Solution = () => {
-    const containerStyle = {
-        padding: '6rem 0',
-        backgroundColor: '#f8fafc',
-    };
-
-    const headerStyle = {
-        textAlign: 'center',
-        marginBottom: '5rem',
-    };
-
-    const timelineContainer = {
-        position: 'relative',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 2rem',
-    };
-
-    const stepsWrapper = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        gap: '2rem',
-        position: 'relative',
-        flexWrap: 'wrap',
-    };
-
-    const progressLine = {
-        position: 'absolute',
-        top: '80px',
-        left: '20%',
-        right: '20%',
-        height: '4px',
-        background: 'linear-gradient(90deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%)',
-        zIndex: 0,
-    };
-
-    const stepCard = (color, bgColor) => ({
-        flex: '1',
-        minWidth: '280px',
-        position: 'relative',
-        zIndex: 1,
-        textAlign: 'center',
-    });
-
-    const iconCircle = (gradient) => ({
-        width: '160px',
-        height: '160px',
-        margin: '0 auto 2rem',
-        background: gradient,
-        borderRadius: '50%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-        transform: 'scale(1)',
-        transition: 'transform 0.3s ease',
-        cursor: 'pointer',
-    });
-
-    const contentCard = {
-        background: '#fff',
-        padding: '2rem',
-        borderRadius: '16px',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-        minHeight: '200px',
-    };
-
-    const solutions = [
+    const steps = [
         {
-            title: 'Consulta Inicial',
-            desc: 'Entendemos tus necesidades y personalizamos el plan ideal para tu negocio.',
-            detail: 'Sin compromiso',
-            icon: '💬',
-            gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-            badgeColor: '#dcfce7',
-            badgeText: '#166534'
+            number: '1',
+            title: 'Agenda tu instalación',
+            desc: 'Elegimos el mejor horario para no interrumpir tu operación'
         },
         {
-            title: 'Instalación de Hardware',
-            desc: 'Nuestro equipo instala el sistema completo: impresora de tickets y pantalla digital. Solo necesitas WiFi.',
-            detail: 'Mismo día',
-            icon: '🔧',
-            gradient: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-            badgeColor: '#dbeafe',
-            badgeText: '#1e40af'
+            number: '2',
+            title: 'Llega nuestro equipo',
+            desc: 'Instalamos y configuramos todo el hardware en 2 horas'
         },
         {
-            title: 'Capacitación Express',
-            desc: 'Entrenamiento rápido para tu personal y listo. Tu negocio queda operativo de inmediato.',
-            detail: 'Listo para usar',
-            icon: '🚀',
-            gradient: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
-            badgeColor: '#ede9fe',
-            badgeText: '#6d28d9'
+            number: '3',
+            title: 'Capacitamos a tu staff',
+            desc: '15 minutos de entrenamiento y están listos para operar'
         }
     ];
 
     return (
-        <section id="solucion" style={containerStyle}>
+        <section id="instalacion" style={{ padding: '6rem 0', background: '#fff' }}>
             <div className="container">
-                <div style={headerStyle}>
-                    <span style={{
-                        color: 'var(--primary-color)',
-                        fontWeight: '600',
-                        textTransform: 'uppercase',
-                        letterSpacing: '2px',
-                        fontSize: '0.9rem'
+                {/* Split Screen Layout */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+                    gap: '4rem',
+                    alignItems: 'center'
+                }}>
+                    {/* Left Side - Image Placeholder */}
+                    <div style={{
+                        position: 'relative',
+                        minHeight: '500px',
+                        background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
+                        borderRadius: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        border: '2px dashed #cbd5e1',
+                        padding: '2rem'
                     }}>
-                        Proceso de Instalación
-                    </span>
-                    <h2 style={{
-                        fontSize: '3rem',
-                        marginTop: '1rem',
-                        color: 'var(--text-main)',
-                        fontWeight: '800'
-                    }}>
-                        Operativo en un solo día
-                    </h2>
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: 'var(--text-secondary)',
-                        marginTop: '1rem',
-                        maxWidth: '600px',
-                        margin: '1rem auto 0'
-                    }}>
-                        De la primera llamada a tu sistema funcionando, todo en 24 horas
-                    </p>
-                </div>
+                        {/* Placeholder content */}
+                        <div style={{ textAlign: 'center', color: '#64748b' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📸</div>
+                            <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Imagen de instalación</div>
+                            <div style={{ fontSize: '0.875rem', maxWidth: '300px', lineHeight: '1.6' }}>
+                                Foto real de técnico instalando hardware (tablet + impresora de tickets) en mostrador de negocio.
+                                Ambiente profesional, iluminación natural.
+                            </div>
+                        </div>
+                    </div>
 
-                <div style={timelineContainer}>
-                    <div style={progressLine}></div>
-                    <div style={stepsWrapper}>
-                        {solutions.map((item, index) => (
-                            <div key={index} style={stepCard()}>
-                                <div
-                                    style={iconCircle(item.gradient)}
-                                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                                >
-                                    <span style={{ fontSize: '5rem' }}>{item.icon}</span>
-                                </div>
+                    {/* Right Side - Content */}
+                    <div style={{ maxWidth: '500px' }}>
+                        <span style={{
+                            color: 'var(--primary-color)',
+                            fontWeight: '600',
+                            textTransform: 'uppercase',
+                            letterSpacing: '1.5px',
+                            fontSize: '0.875rem',
+                            display: 'block',
+                            marginBottom: '1rem'
+                        }}>
+                            Instalación
+                        </span>
 
-                                <div style={contentCard}>
+                        <h2 style={{
+                            fontSize: 'clamp(2rem, 4vw, 3rem)',
+                            lineHeight: '1.1',
+                            marginBottom: '1rem',
+                            color: 'var(--text-main)',
+                            fontWeight: '800'
+                        }}>
+                            3 horas. Eso es todo lo que necesitamos.
+                        </h2>
+
+                        <p style={{
+                            fontSize: '1.125rem',
+                            color: 'var(--text-secondary)',
+                            marginBottom: '3rem',
+                            lineHeight: '1.6'
+                        }}>
+                            Desde que agendas hasta que tu equipo está operando el sistema. Sin complicaciones.
+                        </p>
+
+                        {/* Steps List */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginBottom: '3rem' }}>
+                            {steps.map((step, index) => (
+                                <div key={index} style={{ display: 'flex', gap: '1.5rem', alignItems: 'start' }}>
+                                    {/* Number Badge */}
                                     <div style={{
-                                        fontSize: '2.5rem',
-                                        fontWeight: '800',
-                                        background: item.gradient,
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                        marginBottom: '0.5rem'
-                                    }}>
-                                        {index + 1}
-                                    </div>
-
-                                    <h3 style={{
+                                        width: '48px',
+                                        height: '48px',
+                                        background: 'var(--primary-color)',
+                                        color: '#fff',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
                                         fontSize: '1.5rem',
-                                        marginBottom: '1rem',
-                                        color: 'var(--text-main)',
-                                        fontWeight: '700'
+                                        fontWeight: '800',
+                                        flexShrink: 0,
+                                        boxShadow: '0 4px 6px rgba(37, 211, 102, 0.2)'
                                     }}>
-                                        {item.title}
-                                    </h3>
-
-                                    <p style={{
-                                        color: 'var(--text-secondary)',
-                                        marginBottom: '1.5rem',
-                                        lineHeight: '1.7',
-                                        fontSize: '1rem'
-                                    }}>
-                                        {item.desc}
-                                    </p>
-
-                                    <div style={{
-                                        display: 'inline-block',
-                                        padding: '0.5rem 1.25rem',
-                                        background: item.badgeColor,
-                                        color: item.badgeText,
-                                        borderRadius: '100px',
-                                        fontSize: '0.875rem',
-                                        fontWeight: '600'
-                                    }}>
-                                        ✓ {item.detail}
+                                        {step.number}
                                     </div>
+
+                                    {/* Text Content */}
+                                    <div>
+                                        <h3 style={{
+                                            fontSize: '1.25rem',
+                                            fontWeight: '700',
+                                            color: 'var(--text-main)',
+                                            marginBottom: '0.5rem'
+                                        }}>
+                                            {step.title}
+                                        </h3>
+                                        <p style={{
+                                            color: 'var(--text-secondary)',
+                                            lineHeight: '1.6',
+                                            fontSize: '1rem'
+                                        }}>
+                                            {step.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Included Badge */}
+                        <div style={{
+                            background: '#dcfce7',
+                            border: '1px solid #86efac',
+                            borderRadius: '12px',
+                            padding: '1.25rem 1.5rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '1rem'
+                        }}>
+                            <div style={{
+                                width: '32px',
+                                height: '32px',
+                                background: '#16a34a',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                flexShrink: 0
+                            }}>
+                                ✓
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: '700', color: '#166534', marginBottom: '0.25rem' }}>
+                                    Instalación sin costo adicional
+                                </div>
+                                <div style={{ fontSize: '0.875rem', color: '#15803d' }}>
+                                    Incluido en tu plan mensual
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </div>

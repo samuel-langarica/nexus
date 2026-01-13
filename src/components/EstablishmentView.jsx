@@ -49,7 +49,7 @@ const EstablishmentView = () => {
                         </div>
                     </div>
 
-                    {/* Terminal de Control */}
+                    {/* Impresora de Tickets */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
                         <div style={{ position: 'relative' }}>
                             <TerminalMockup nextTicket="A053" />
@@ -65,12 +65,12 @@ const EstablishmentView = () => {
                                 boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
                                 fontSize: '0.9rem'
                             }}>
-                                Para el negocio
+                                Para clientes
                             </div>
                         </div>
                         <div style={{ textAlign: 'center', maxWidth: '300px' }}>
-                            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Terminal de Métricas</h3>
-                            <p style={{ opacity: 0.6, fontSize: '0.9rem' }}>Monitorea el flujo y toma decisiones con datos en tiempo real.</p>
+                            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Impresora de Tickets</h3>
+                            <p style={{ opacity: 0.6, fontSize: '0.9rem' }}>Genera tickets automáticamente para que tus clientes tomen turno.</p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ const EstablishmentView = () => {
                                 color: '#16a34a',
                                 flexShrink: 0
                             }}>✓</div>
-                            <span>Terminal de métricas</span>
+                            <span>Impresora de tickets</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                             <div style={{
