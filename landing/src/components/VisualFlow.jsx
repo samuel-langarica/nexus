@@ -1,17 +1,17 @@
 import React from 'react';
-import { TicketMockup, PhoneMockup } from './Mockups';
+import { QRDisplayMockup, PhoneMockup } from './Mockups';
 
 const VisualFlow = () => {
     const steps = [
         {
             id: 1,
-            title: "Toma tu turno",
-            desc: "Escanea el código QR en la entrada y recibe tu número al instante.",
-            component: <TicketMockup number="A052" />
+            title: "Escanea el QR",
+            desc: "El QR se muestra en la pantalla del negocio. Escanéalo con tu celular.",
+            component: <QRDisplayMockup number="A052" />
         },
         {
             id: 2,
-            title: "Escanea para unirte",
+            title: "Conecta por WhatsApp",
             desc: "El QR abre WhatsApp automáticamente. Sin apps, sin registros.",
             component: <PhoneMockup state="scan" />
         },

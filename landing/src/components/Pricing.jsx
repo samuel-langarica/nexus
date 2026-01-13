@@ -90,9 +90,9 @@ const Pricing = () => {
     const plans = [
         {
             name: 'Básico',
-            subtitle: 'Solo software',
+            subtitle: 'Para empezar',
             price: '399',
-            description: 'Perfecto para negocios que quieren empezar hoy con su propio hardware',
+            description: 'Perfecto para negocios que quieren empezar hoy. Usa tu celular o tablet.',
             cta: 'Probar Gratis 14 Días',
             popular: false,
             categories: [
@@ -100,8 +100,8 @@ const Pricing = () => {
                     title: 'Software',
                     features: [
                         { text: 'Dashboard para gestionar turnos', included: true, icon: 'Monitor', desc: 'Accede desde cualquier computadora o móvil del staff' },
-                        { text: 'Notificaciones WhatsApp ilimitadas', included: true, icon: 'WhatsApp', desc: 'Alertas automáticas a tus clientes' },
-                        { text: 'Código QR digital', included: true, icon: 'QrCode', desc: 'Clientes escanean y reciben su turno al instante' }
+                        { text: '1,000 turnos/mes via WhatsApp', included: true, icon: 'WhatsApp', desc: 'Alertas automáticas a tus clientes' },
+                        { text: 'Código QR digital', included: true, icon: 'QrCode', desc: 'Muestra el QR en tu celular o tablet' }
                     ]
                 },
                 {
@@ -113,7 +113,7 @@ const Pricing = () => {
                 {
                     title: 'Hardware',
                     features: [
-                        { text: 'Usa tus propios dispositivos', included: false, icon: 'Tablet', note: 'No incluido' }
+                        { text: 'Usa tu celular o tablet existente', included: true, icon: 'Tablet', desc: 'No necesitas comprar hardware adicional' }
                     ]
                 },
                 {
@@ -135,32 +135,31 @@ const Pricing = () => {
         },
         {
             name: 'Profesional',
-            subtitle: 'Hardware + Software',
+            subtitle: 'Software Premium',
             price: '1,799',
-            description: 'Solución completa llave en mano con instalación profesional',
-            cta: 'Agendar Instalación',
+            description: 'WhatsApp ilimitado, API completa e integraciones avanzadas',
+            cta: 'Empezar con Profesional',
             popular: true,
             categories: [
                 {
                     title: 'Software',
                     features: [
-                        { text: 'Todo de Básico incluido', included: true, icon: 'Monitor', bold: true }
+                        { text: 'Todo de Básico incluido', included: true, icon: 'Monitor', bold: true },
+                        { text: 'WhatsApp ILIMITADO', included: true, icon: 'WhatsApp', highlight: true, desc: 'Sin límites de turnos mensuales' }
                     ]
                 },
                 {
                     title: 'Configuración',
                     features: [
-                        { text: 'Instalación completa en tu negocio', included: true, icon: 'Settings', desc: 'Técnico configura todo el sistema en tu local' },
-                        { text: 'Capacitación presencial del equipo', included: true, icon: 'Users', desc: 'Entrenamos a tu staff en cómo usar el sistema' },
-                        { text: 'De cero a operación en 3 horas', included: true, icon: 'Zap', desc: 'Sistema funcionando la misma tarde' }
+                        { text: 'Onboarding personalizado', included: true, icon: 'Settings', desc: 'Asistencia 1-a-1 para configurar tu cuenta' },
+                        { text: 'Capacitación del equipo', included: true, icon: 'Users', desc: 'Entrenamos a tu staff vía videollamada' },
+                        { text: 'Setup asistido completo', included: true, icon: 'Zap', desc: 'Te ayudamos paso a paso hasta que estés operando' }
                     ]
                 },
                 {
-                    title: 'Hardware Incluido',
+                    title: 'Hardware',
                     features: [
-                        { text: 'Tablet Android 10" dedicada', included: true, icon: 'Tablet', desc: 'Hardware profesional para tu staff' },
-                        { text: 'Impresora térmica de tickets', included: true, icon: 'Printer', desc: 'Imprime tickets físicos con QR único' },
-                        { text: 'Reemplazo de hardware sin costo', included: true, icon: 'Zap', desc: 'Upgrades y mantenimiento incluido' }
+                        { text: 'Compatible con cualquier dispositivo', included: true, icon: 'Tablet', desc: 'Celular, tablet, monitor o TV - tú decides' }
                     ]
                 },
                 {

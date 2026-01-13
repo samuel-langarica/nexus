@@ -5,18 +5,18 @@ const Solution = () => {
     const steps = [
         {
             number: '1',
-            title: 'Elige tu setup',
-            desc: 'Rápido (autoservicio) o Completo (instalación profesional)'
+            title: 'Elige tu plan',
+            desc: 'Básico (1,000 turnos/mes) o Profesional (ilimitado + API)'
         },
         {
             number: '2',
-            title: 'Configura o instalamos',
-            desc: 'Configuras en 10 min o nuestro equipo instala en tu negocio'
+            title: 'Configura tu sistema',
+            desc: 'Setup guiado en minutos o asistencia personalizada completa'
         },
         {
             number: '3',
             title: 'Ya estás operando',
-            desc: 'Tu equipo gestiona la fila desde el primer momento'
+            desc: 'Muestra el QR en tu dispositivo y comienza a recibir clientes'
         }
     ];
 
@@ -94,7 +94,7 @@ const Solution = () => {
                             display: 'block',
                             marginBottom: '1rem'
                         }}>
-                            Instalación
+                            Cómo Empezar
                         </span>
 
                         <h2 style={{
@@ -104,7 +104,7 @@ const Solution = () => {
                             color: 'var(--text-main)',
                             fontWeight: '800'
                         }}>
-                            Empieza como tú quieras.
+                            Escala a tu ritmo.
                         </h2>
 
                         <p style={{
@@ -113,7 +113,7 @@ const Solution = () => {
                             marginBottom: '3rem',
                             lineHeight: '1.6'
                         }}>
-                            Setup autoservicio en 10 minutos o instalación profesional completa en 3 horas. Tú decides.
+                            Empieza con lo esencial y actualiza cuando necesites más capacidad o integraciones avanzadas.
                         </p>
 
                         {/* Steps List */}

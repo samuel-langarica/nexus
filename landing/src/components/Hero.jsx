@@ -1,5 +1,5 @@
 import React from 'react';
-import { TicketMockup, PhoneMockup } from './Mockups';
+import { QRDisplayMockup, PhoneMockup } from './Mockups';
 
 const Hero = () => {
     return (
@@ -65,7 +65,7 @@ const Hero = () => {
                                 $399<span style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--text-secondary)' }}> MXN/mes</span>
                             </div>
                             <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                                Solo software
+                                1,000 turnos/mes
                             </div>
                         </div>
 
@@ -101,7 +101,7 @@ const Hero = () => {
                                 $1,799<span style={{ fontSize: '1rem', fontWeight: '600', color: '#15803d' }}> MXN/mes</span>
                             </div>
                             <div style={{ fontSize: '0.875rem', color: '#15803d' }}>
-                                Hardware + Software
+                                Ilimitado + API
                             </div>
                         </div>
                     </div>
@@ -117,11 +117,11 @@ const Hero = () => {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                         <div style={{ width: '20px', height: '20px', background: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a', fontSize: '0.75rem', fontWeight: 'bold' }}>✓</div>
-                        <span style={{ fontWeight: '600' }}>Mismo software potente en ambos planes</span>
+                        <span style={{ fontWeight: '600' }}>Usa tu propio celular o tablet para mostrar el QR</span>
                     </div>
                 </div>
 
-                {/* Simple Hero Visual - Ticket + Phone */}
+                {/* Simple Hero Visual - QR Display + Phone */}
                 <div className="hero-visual" style={{
                     position: 'relative',
                     minHeight: '500px',
@@ -144,14 +144,14 @@ const Hero = () => {
                         zIndex: 0
                     }}></div>
 
-                    {/* Ticket - Left */}
+                    {/* QR Display Device - Left */}
                     <div style={{
                         position: 'relative',
                         zIndex: 2,
                         transform: 'scale(1.1)',
                         filter: 'drop-shadow(10px 20px 30px rgba(0,0,0,0.15))'
                     }}>
-                        <TicketMockup number="A047" />
+                        <QRDisplayMockup number="A047" />
                     </div>
 
                     {/* Arrow/Connection Indicator */}
