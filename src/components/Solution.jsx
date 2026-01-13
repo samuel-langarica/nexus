@@ -1,4 +1,5 @@
 import React from 'react';
+import installationImage from '../assets/installation.png';
 
 const Solution = () => {
     const steps = [
@@ -29,27 +30,27 @@ const Solution = () => {
                     gap: '4rem',
                     alignItems: 'center'
                 }}>
-                    {/* Left Side - Image Placeholder */}
+                    {/* Left Side - Installation Image */}
                     <div style={{
                         position: 'relative',
                         minHeight: '500px',
-                        background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
                         borderRadius: '16px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        border: '2px dashed #cbd5e1',
-                        padding: '2rem'
+                        overflow: 'hidden'
                     }}>
-                        {/* Placeholder content */}
-                        <div style={{ textAlign: 'center', color: '#64748b' }}>
-                            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📸</div>
-                            <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Imagen de instalación</div>
-                            <div style={{ fontSize: '0.875rem', maxWidth: '300px', lineHeight: '1.6' }}>
-                                Foto real de técnico instalando hardware (tablet + impresora de tickets) en mostrador de negocio.
-                                Ambiente profesional, iluminación natural.
-                            </div>
-                        </div>
+                        <img
+                            src={installationImage}
+                            alt="Técnico instalando Nexus Queue"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '16px',
+                                boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.15)'
+                            }}
+                        />
                     </div>
 
                     {/* Right Side - Content */}

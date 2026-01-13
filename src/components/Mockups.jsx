@@ -2,6 +2,7 @@ import React from 'react';
 
 import qrCode from '../assets/qr_code.png';
 import cameraBg from '../assets/camera_bg.jpg';
+import epsonPrinter from '../assets/epson.png';
 
 export const TicketMockup = ({ number = "A047", time = "14:30" }) => (
     <div style={{
@@ -28,7 +29,92 @@ export const TicketMockup = ({ number = "A047", time = "14:30" }) => (
     </div>
 );
 
-export const PhoneMockup = ({ state = "scan" }) => {
+// Message presets for different use cases
+export const MESSAGE_PRESETS = {
+    general: {
+        welcome: [
+            "✅ Listo, ya estás en el sistema",
+            "Puedes sentarte, ir al baño o tomar un café ☕",
+            "Te avisamos cuando falten 2 turnos (~8 min)"
+        ],
+        alert: [
+            "⏰ ¡Tu turno está por salir!",
+            "Dirígete a Caja 3 ahora 👉"
+        ]
+    },
+    hospital: {
+        welcome: [
+            "✅ Registrado para consulta médica",
+            "Hay 12 personas adelante (~45 min)",
+            "Puedes ir a cafetería o esperar afuera. Te avisamos con tiempo"
+        ],
+        progress: [
+            "⏱️ Faltan 3 pacientes (~15 min)",
+            "Ve acercándote al área de espera"
+        ],
+        alert: [
+            "🩺 Es tu turno ahora",
+            "Consultorio 5 - Dra. Martínez"
+        ]
+    },
+    retail: {
+        welcome: [
+            "✅ Ya estás en fila de cambios",
+            "4 personas adelante (~10 min)",
+            "Sigue viendo la tienda, te avisamos cuando estés cerca 🛍️"
+        ],
+        alert: [
+            "⏰ Tu turno sale en 2 minutos",
+            "Servicio al Cliente - Mostrador 3"
+        ]
+    },
+    bank: {
+        welcome: [
+            "✅ En fila para atención general",
+            "8 personas esperan (~12 min)",
+            "Tenemos 4 cajas trabajando. Siéntate tranquilo"
+        ],
+        alert: [
+            "🔔 ¡Es tu turno!",
+            "Dirígete a Ventanilla 7"
+        ]
+    },
+    government: {
+        welcome: [
+            "✅ Turno para licencias registrado",
+            "Posición en fila: 15 (~90 min)",
+            "NO necesitas estar presente. Vuelve en 1 hora o espera afuera"
+        ],
+        progress: [
+            "⏰ Faltan 30 minutos (~5 turnos)",
+            "Ve regresando al edificio"
+        ],
+        alert: [
+            "📋 Es tu turno - Ventanilla 12",
+            "Ten listos: INE + comprobante"
+        ]
+    },
+    restaurant: {
+        welcome: [
+            "✅ Mesa para 4 personas confirmada",
+            "Hay 6 grupos adelante (~25 min)",
+            "Espera en el bar o da una vuelta. Te avisamos 9 min antes"
+        ],
+        progress: [
+            "🍽️ Tu mesa estará lista en 9 minutos",
+            "Ve acercándote al restaurante"
+        ],
+        alert: [
+            "✨ ¡Tu mesa está lista!",
+            "Preséntate en recepción - Mesa 12"
+        ]
+    }
+};
+
+export const PhoneMockup = ({ state = "scan", preset = "general", customMessages = null }) => {
+    // Use custom messages if provided, otherwise use preset
+    const messages = customMessages || MESSAGE_PRESETS[preset] || MESSAGE_PRESETS.general;
+
     return (
         <div style={{
             width: '240px',
@@ -102,24 +188,229 @@ export const PhoneMockup = ({ state = "scan" }) => {
                 )}
                 {(state.startsWith('chat')) && (
                     <>
-                        <div style={{ background: '#075E54', padding: '35px 15px 15px 15px', color: '#fff', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <div style={{ width: '32px', height: '32px', background: '#fff', borderRadius: '50%' }}></div>
-                            <div><div style={{ fontSize: '0.9rem', fontWeight: '600' }}>Nexus Bot</div></div>
+                        {/* Status bar */}
+                        <div style={{ background: '#075E54', padding: '4px 15px', color: '#fff', display: 'flex', justifyContent: 'space-between', fontSize: '0.65rem', fontWeight: '500' }}>
+                            <span>9:41 AM</span>
+                            <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+                                <span>📶</span>
+                                <span>WiFi</span>
+                                <span>🔋</span>
+                            </div>
                         </div>
-                        <div style={{ flex: 1, background: '#E5DDD5', padding: '20px 15px', display: 'flex', flexDirection: 'column', gap: '12px', overflowY: 'auto' }}>
-                            {state === 'chat_welcome' && (
-                                <div style={{ alignSelf: 'flex-start', maxWidth: '85%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                                    <div style={{ background: '#fff', padding: '10px 14px', borderRadius: '0 8px 8px 8px', fontSize: '0.85rem', lineHeight: '1.4' }}>✅ Listo, ya estás en el sistema</div>
-                                    <div style={{ background: '#fff', padding: '10px 14px', borderRadius: '0 8px 8px 8px', fontSize: '0.85rem', lineHeight: '1.4' }}>Puedes sentarte, ir al baño o tomar un café ☕</div>
-                                    <div style={{ background: '#fff', padding: '10px 14px', borderRadius: '0 8px 8px 8px', fontSize: '0.85rem', lineHeight: '1.4' }}>Te avisamos cuando falten 2 turnos (~8 min)</div>
+
+                        {/* WhatsApp Header */}
+                        <div style={{ background: '#075E54', padding: '8px 12px', color: '#fff', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                            {/* Back arrow */}
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7"/>
+                            </svg>
+                            {/* Profile picture - same as header logo */}
+                            <div style={{ width: '32px', height: '32px', background: '#667eea', borderRadius: '6px' }}></div>
+                            {/* Name and status */}
+                            <div style={{ flex: 1 }}>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>Nexus</div>
+                                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)' }}>en línea</div>
+                            </div>
+                            {/* Header icons */}
+                            <div style={{ display: 'flex', gap: '16px' }}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="12" cy="5" r="1.5"/>
+                                    <circle cx="12" cy="12" r="1.5"/>
+                                    <circle cx="12" cy="19" r="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        {/* WhatsApp Background Pattern */}
+                        <div style={{
+                            flex: 1,
+                            background: '#E5DDD5',
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4cdc6' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                            padding: '12px 8px 8px 8px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '8px',
+                            overflowY: 'auto'
+                        }}>
+                            {state === 'chat_welcome' && messages.welcome && (
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                    {messages.welcome.map((msg, index) => (
+                                        <div key={index} style={{
+                                            alignSelf: 'flex-start',
+                                            maxWidth: '82%',
+                                            display: 'flex',
+                                            flexDirection: 'column'
+                                        }}>
+                                            <div style={{
+                                                background: '#fff',
+                                                padding: '6px 10px 8px 10px',
+                                                borderRadius: '0 8px 8px 8px',
+                                                fontSize: '0.8rem',
+                                                lineHeight: '1.4',
+                                                boxShadow: '0 1px 0.5px rgba(0,0,0,0.13)',
+                                                position: 'relative'
+                                            }}>
+                                                {/* Tail for first message */}
+                                                {index === 0 && (
+                                                    <div style={{
+                                                        position: 'absolute',
+                                                        left: '-8px',
+                                                        top: '0',
+                                                        width: '0',
+                                                        height: '0',
+                                                        borderTop: '8px solid #fff',
+                                                        borderLeft: '8px solid transparent'
+                                                    }}></div>
+                                                )}
+                                                <div>{msg}</div>
+                                                <div style={{
+                                                    fontSize: '0.65rem',
+                                                    color: '#667781',
+                                                    marginTop: '2px',
+                                                    textAlign: 'right'
+                                                }}>
+                                                    9:41 AM
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             )}
-                            {state === 'chat_alert' && (
-                                <div style={{ alignSelf: 'flex-start', maxWidth: '85%', display: 'flex', flexDirection: 'column', gap: '8px', marginTop: 'auto' }}>
-                                    <div style={{ background: '#fff', padding: '10px 14px', borderRadius: '0 8px 8px 8px', fontSize: '0.85rem', lineHeight: '1.4' }}>⏰ <strong>¡Tu turno está por salir!</strong></div>
-                                    <div style={{ background: '#fff', padding: '10px 14px', borderRadius: '0 8px 8px 8px', fontSize: '0.85rem', lineHeight: '1.4' }}>Dirígete a Caja 3 ahora 👉</div>
+                            {state === 'chat_progress' && messages.progress && (
+                                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                    {messages.progress.map((msg, index) => (
+                                        <div key={index} style={{
+                                            alignSelf: 'flex-start',
+                                            maxWidth: '82%',
+                                            display: 'flex',
+                                            flexDirection: 'column'
+                                        }}>
+                                            <div style={{
+                                                background: '#fff',
+                                                padding: '6px 10px 8px 10px',
+                                                borderRadius: '0 8px 8px 8px',
+                                                fontSize: '0.8rem',
+                                                lineHeight: '1.4',
+                                                boxShadow: '0 1px 0.5px rgba(0,0,0,0.13)',
+                                                position: 'relative'
+                                            }}>
+                                                {index === 0 && (
+                                                    <div style={{
+                                                        position: 'absolute',
+                                                        left: '-8px',
+                                                        top: '0',
+                                                        width: '0',
+                                                        height: '0',
+                                                        borderTop: '8px solid #fff',
+                                                        borderLeft: '8px solid transparent'
+                                                    }}></div>
+                                                )}
+                                                <div>{msg}</div>
+                                                <div style={{
+                                                    fontSize: '0.65rem',
+                                                    color: '#667781',
+                                                    marginTop: '2px',
+                                                    textAlign: 'right'
+                                                }}>
+                                                    10:23 AM
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             )}
+                            {state === 'chat_alert' && messages.alert && (
+                                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                    {messages.alert.map((msg, index) => (
+                                        <div key={index} style={{
+                                            alignSelf: 'flex-start',
+                                            maxWidth: '82%',
+                                            display: 'flex',
+                                            flexDirection: 'column'
+                                        }}>
+                                            <div style={{
+                                                background: '#fff',
+                                                padding: '6px 10px 8px 10px',
+                                                borderRadius: '0 8px 8px 8px',
+                                                fontSize: '0.8rem',
+                                                lineHeight: '1.4',
+                                                boxShadow: '0 1px 0.5px rgba(0,0,0,0.13)',
+                                                position: 'relative'
+                                            }}>
+                                                {index === 0 && (
+                                                    <div style={{
+                                                        position: 'absolute',
+                                                        left: '-8px',
+                                                        top: '0',
+                                                        width: '0',
+                                                        height: '0',
+                                                        borderTop: '8px solid #fff',
+                                                        borderLeft: '8px solid transparent'
+                                                    }}></div>
+                                                )}
+                                                <div>{msg}</div>
+                                                <div style={{
+                                                    fontSize: '0.65rem',
+                                                    color: '#667781',
+                                                    marginTop: '2px',
+                                                    textAlign: 'right'
+                                                }}>
+                                                    10:45 AM
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* WhatsApp Input Bar */}
+                        <div style={{
+                            background: '#F0F0F0',
+                            padding: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            borderTop: '1px solid #d1d1d1'
+                        }}>
+                            {/* Input field */}
+                            <div style={{
+                                flex: 1,
+                                background: '#fff',
+                                borderRadius: '20px',
+                                padding: '8px 12px',
+                                fontSize: '0.8rem',
+                                color: '#667781',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px'
+                            }}>
+                                <span>Mensaje</span>
+                                <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', color: '#8696a0' }}>
+                                    {/* Camera icon */}
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                        <circle cx="12" cy="13" r="4"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* Send button */}
+                            <div style={{
+                                width: '36px',
+                                height: '36px',
+                                background: '#25D366',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer'
+                            }}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"/>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" fill="white"/>
+                                </svg>
+                            </div>
                         </div>
                     </>
                 )}
@@ -135,44 +426,108 @@ export const TabletMockup = () => (
         width: '420px',
         height: '300px',
         position: 'relative',
-        borderRadius: '16px',
-        overflow: 'hidden',
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-        border: '2px dashed #cbd5e1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '2rem'
+        transform: 'perspective(800px) rotateY(-10deg) rotateX(5deg)',
+        transformStyle: 'preserve-3d'
     }}>
-        {/* Image Placeholder */}
-        <div style={{ textAlign: 'center', color: '#64748b', maxWidth: '360px' }}>
-            <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>📱</div>
-            <div style={{ fontWeight: '700', marginBottom: '0.75rem', fontSize: '1.1rem', color: '#334155' }}>
-                Tableta de Control para Empleados
-            </div>
-            <div style={{ fontSize: '0.875rem', lineHeight: '1.6', marginBottom: '1.25rem', color: '#64748b' }}>
-                Mockup de iPad o Samsung Tab en ángulo 3/4, sobre mostrador profesional, con pantalla encendida mostrando la interface de control.
-            </div>
+        {/* Tablet Hardware */}
+        <div style={{
+            width: '100%',
+            height: '100%',
+            background: '#2d3748',
+            borderRadius: '24px',
+            padding: '14px',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 0 0 2px #4a5568',
+            position: 'relative'
+        }}>
+            {/* Screen */}
             <div style={{
+                width: '100%',
+                height: '100%',
                 background: '#fff',
-                borderRadius: '10px',
-                padding: '1.25rem',
-                fontSize: '0.8rem',
-                lineHeight: '1.5',
-                textAlign: 'left',
-                border: '1px solid #e2e8f0',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1)',
+                position: 'relative'
             }}>
-                <div style={{ fontWeight: '700', marginBottom: '0.75rem', color: '#0f172a', fontSize: '0.85rem' }}>La pantalla debe mostrar:</div>
-                <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <li>Título "Control de Turnos" o "Punto de Atención"</li>
-                    <li>Número de turno actual grande (ej: "A048")</li>
-                    <li>Botón verde destacado "Llamar Siguiente"</li>
-                    <li>Lista de 2-3 turnos en espera con tiempos</li>
-                    <li>Indicador de estado "Activo" o "En línea"</li>
-                    <li>Diseño limpio, moderno, estilo SaaS</li>
-                </ul>
+                {/* Status Bar */}
+                <div style={{
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    padding: '12px 20px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ width: '32px', height: '32px', background: '#fff', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.9rem', color: '#667eea' }}>N</div>
+                        <span style={{ color: '#fff', fontWeight: '600', fontSize: '0.95rem' }}>Control de Turnos</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'rgba(255,255,255,0.2)', padding: '4px 10px', borderRadius: '12px' }}>
+                        <div style={{ width: '6px', height: '6px', background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 4px #22c55e' }}></div>
+                        <span style={{ color: '#fff', fontSize: '0.7rem', fontWeight: '500' }}>En línea</span>
+                    </div>
+                </div>
+
+                {/* Main Content */}
+                <div style={{ padding: '20px', height: 'calc(100% - 56px)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    {/* Current Ticket Display */}
+                    <div style={{
+                        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+                        borderRadius: '16px',
+                        padding: '16px',
+                        textAlign: 'center',
+                        border: '2px solid #e2e8f0'
+                    }}>
+                        <div style={{ fontSize: '0.7rem', color: '#64748b', fontWeight: '600', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '1px' }}>Turno Actual</div>
+                        <div style={{ fontSize: '3rem', fontWeight: '800', color: '#0f172a', lineHeight: '1', marginBottom: '8px' }}>A048</div>
+                        <button style={{
+                            background: '#22c55e',
+                            color: '#fff',
+                            border: 'none',
+                            padding: '10px 24px',
+                            borderRadius: '10px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600',
+                            cursor: 'pointer',
+                            boxShadow: '0 4px 12px rgba(34, 197, 94, 0.3)',
+                            width: '100%'
+                        }}>
+                            ✓ Llamar Siguiente
+                        </button>
+                    </div>
+
+                    {/* Queue List */}
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ fontSize: '0.7rem', color: '#64748b', fontWeight: '600', marginBottom: '4px' }}>EN ESPERA</div>
+                        <div style={{ background: '#f8fafc', borderRadius: '8px', padding: '10px 12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', border: '1px solid #e2e8f0' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <span style={{ fontSize: '1.1rem', fontWeight: '700', color: '#0f172a' }}>A049</span>
+                                <span style={{ fontSize: '0.7rem', color: '#64748b' }}>• Hace 12 min</span>
+                            </div>
+                            <div style={{ background: '#fef3c7', color: '#92400e', padding: '3px 8px', borderRadius: '6px', fontSize: '0.65rem', fontWeight: '600' }}>Esperando</div>
+                        </div>
+                        <div style={{ background: '#f8fafc', borderRadius: '8px', padding: '10px 12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', border: '1px solid #e2e8f0' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <span style={{ fontSize: '1.1rem', fontWeight: '700', color: '#0f172a' }}>A050</span>
+                                <span style={{ fontSize: '0.7rem', color: '#64748b' }}>• Hace 8 min</span>
+                            </div>
+                            <div style={{ background: '#fef3c7', color: '#92400e', padding: '3px 8px', borderRadius: '6px', fontSize: '0.65rem', fontWeight: '600' }}>Esperando</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {/* Home Button (iPad style) */}
+            <div style={{
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '40px',
+                height: '6px',
+                background: '#1a202c',
+                borderRadius: '3px'
+            }}></div>
         </div>
     </div>
 );
@@ -230,43 +585,24 @@ export const TerminalMockup = ({ nextTicket = "A053" }) => (
         height: '300px',
         position: 'relative',
         borderRadius: '16px',
-        overflow: 'hidden',
         background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-        border: '2px dashed #cbd5e1',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem'
+        padding: '1rem',
+        boxShadow: '0 10px 40px -10px rgba(0, 0, 0, 0.2)'
     }}>
-        {/* Image Placeholder */}
-        <div style={{ textAlign: 'center', color: '#64748b', maxWidth: '360px' }}>
-            <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🖨️</div>
-            <div style={{ fontWeight: '700', marginBottom: '0.75rem', fontSize: '1.1rem', color: '#334155' }}>
-                Impresora Térmica de Tickets
-            </div>
-            <div style={{ fontSize: '0.875rem', lineHeight: '1.6', marginBottom: '1.25rem', color: '#64748b' }}>
-                Impresora térmica de tickets (estilo Epson TM-T20) montada en pared o mostrador, con ticket saliendo del dispensador.
-            </div>
-            <div style={{
-                background: '#fff',
-                borderRadius: '10px',
-                padding: '1.25rem',
-                fontSize: '0.8rem',
-                lineHeight: '1.5',
-                textAlign: 'left',
-                border: '1px solid #e2e8f0',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-            }}>
-                <div style={{ fontWeight: '700', marginBottom: '0.75rem', color: '#0f172a', fontSize: '0.85rem' }}>La imagen debe incluir:</div>
-                <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <li>Impresora térmica blanca o negra (hardware real)</li>
-                    <li>Ticket físico saliendo del dispensador</li>
-                    <li>Número visible en el ticket: "{nextTicket}"</li>
-                    <li>LED verde indicando "listo para imprimir"</li>
-                    <li>Panel pequeño mostrando "Tome su ticket"</li>
-                    <li>Vista frontal clara, fondo de mostrador</li>
-                </ul>
-            </div>
-        </div>
+        {/* Epson Printer Image - Much Larger */}
+        <img
+            src={epsonPrinter}
+            alt="Epson Thermal Printer"
+            style={{
+                width: 'auto',
+                height: '280px',
+                maxWidth: '100%',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25))'
+            }}
+        />
     </div>
 );

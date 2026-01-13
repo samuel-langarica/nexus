@@ -17,9 +17,9 @@ const VisualFlow = () => {
         },
         {
             id: 3,
-            title: "Bienvenido a Nexus",
-            desc: "Recibe confirmación inmediata y un botón para ver tu estatus en tiempo real.",
-            component: <PhoneMockup state="chat_welcome" />
+            title: "Espera donde quieras",
+            desc: "Confirmación instantánea. Ve al bar, da una vuelta o relájate. Nosotros le avisamos a tus clientes.",
+            component: <PhoneMockup state="chat_welcome" preset="restaurant" />
         }
     ];
 

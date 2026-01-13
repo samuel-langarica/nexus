@@ -27,7 +27,7 @@ const Header = () => {
                 </nav>
 
                 <div>
-                    <Button variant="accent" size="small">Agendar Demo</Button>
+                    <Button variant="accent" size="small">Empezar Ahora</Button>
                 </div>
             </div>
         </header>

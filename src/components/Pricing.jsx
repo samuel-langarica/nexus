@@ -1,17 +1,14 @@
 import React from 'react';
 
 const Pricing = () => {
-    const features = [
-        'Hardware completo incluido',
-        'Impresora de tickets térmica',
-        'Tablet para el staff',
-        'Terminal de métricas',
-        'Notificaciones por WhatsApp ilimitadas',
-        'Pantalla digital en tiempo real',
-        'Instalación y configuración',
-        'Soporte técnico prioritario',
-        'Actualizaciones automáticas',
-        'Sin contratos forzosos'
+    const benefits = [
+        { text: 'Impresora térmica de tickets', detail: 'Alta velocidad, papel de larga duración' },
+        { text: 'Tablet Android 10" para staff', detail: 'Resistente a salpicaduras, batería todo el día' },
+        { text: 'Instalación y configuración completa', detail: 'Técnico especializado en sitio' },
+        { text: 'Notificaciones WhatsApp ilimitadas', detail: 'Sin límites de mensajes mensuales' },
+        { text: 'API de integración', detail: 'Conecta con tus sistemas existentes' },
+        { text: 'Soporte técnico 24/7', detail: 'Respuesta en menos de 2 horas' },
+        { text: 'Garantía de uptime 99.99%', detail: 'Máxima confiabilidad para tu negocio' }
     ];
 
     return (
@@ -49,7 +46,7 @@ const Pricing = () => {
                 </div>
 
                 {/* Pricing Card */}
-                <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+                <div style={{ maxWidth: '700px', margin: '0 auto' }}>
                     <div style={{
                         background: '#fff',
                         borderRadius: '24px',
@@ -72,11 +69,11 @@ const Pricing = () => {
                             fontSize: '0.875rem',
                             boxShadow: '0 4px 12px rgba(37, 211, 102, 0.3)'
                         }}>
-                            Plan Profesional
+                            Plan Enterprise
                         </div>
 
                         {/* Price */}
-                        <div style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem' }}>
+                        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '0.5rem' }}>
                                 <span style={{
                                     fontSize: '4rem',
@@ -95,11 +92,11 @@ const Pricing = () => {
                                 </span>
                             </div>
                             <p style={{
-                                marginTop: '1rem',
+                                marginTop: '0.75rem',
                                 color: 'var(--text-secondary)',
                                 fontSize: '1rem'
                             }}>
-                                Facturado mensualmente. Cancela cuando quieras.
+                                Todo incluido. Sin costos ocultos. Cancela cuando quieras.
                             </p>
                         </div>
 
@@ -118,37 +115,27 @@ const Pricing = () => {
                             transition: 'transform 0.2s, box-shadow 0.2s',
                             marginBottom: '2.5rem'
                         }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-2px)';
-                            e.currentTarget.style.boxShadow = '0 8px 20px rgba(37, 211, 102, 0.4)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(37, 211, 102, 0.3)';
-                        }}>
-                            Comenzar Ahora
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = '0 8px 20px rgba(37, 211, 102, 0.4)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(37, 211, 102, 0.3)';
+                            }}>
+                            Empezar Ahora
                         </button>
 
-                        {/* Features List */}
+                        {/* Benefits List */}
                         <div style={{
                             display: 'flex',
                             flexDirection: 'column',
                             gap: '1rem'
                         }}>
-                            <div style={{
-                                fontSize: '0.875rem',
-                                fontWeight: '700',
-                                color: 'var(--text-main)',
-                                marginBottom: '0.5rem',
-                                textTransform: 'uppercase',
-                                letterSpacing: '1px'
-                            }}>
-                                Incluye:
-                            </div>
-                            {features.map((feature, index) => (
+                            {benefits.map((benefit, index) => (
                                 <div key={index} style={{
                                     display: 'flex',
-                                    alignItems: 'center',
+                                    alignItems: 'flex-start',
                                     gap: '0.75rem'
                                 }}>
                                     <div style={{
@@ -162,17 +149,29 @@ const Pricing = () => {
                                         color: '#16a34a',
                                         fontSize: '0.75rem',
                                         fontWeight: 'bold',
-                                        flexShrink: 0
+                                        flexShrink: 0,
+                                        marginTop: '0.125rem'
                                     }}>
                                         ✓
                                     </div>
-                                    <span style={{
-                                        color: 'var(--text-secondary)',
-                                        fontSize: '1rem',
-                                        lineHeight: '1.5'
-                                    }}>
-                                        {feature}
-                                    </span>
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{
+                                            color: 'var(--text-main)',
+                                            fontSize: '1rem',
+                                            fontWeight: '600',
+                                            lineHeight: '1.5',
+                                            marginBottom: '0.125rem'
+                                        }}>
+                                            {benefit.text}
+                                        </div>
+                                        <div style={{
+                                            fontSize: '0.875rem',
+                                            color: 'var(--text-secondary)',
+                                            lineHeight: '1.5'
+                                        }}>
+                                            {benefit.detail}
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -189,7 +188,7 @@ const Pricing = () => {
                                 color: 'var(--text-secondary)',
                                 lineHeight: '1.6'
                             }}>
-                                🔒 Pago seguro · Sin contratos largos · Soporte 24/7
+                                🔒 Pago seguro · 🎯 ROI garantizado · 🚀 Setup en 24 horas
                             </div>
                         </div>
                     </div>

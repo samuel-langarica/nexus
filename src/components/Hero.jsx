@@ -46,7 +46,7 @@ const Hero = () => {
                             Empezar Ahora
                         </button>
                         <button className="btn btn-secondary">
-                            Ver Demo
+                            Ver Precios
                         </button>
                     </div>
 
@@ -112,7 +112,7 @@ const Hero = () => {
                         transform: 'scale(1.1)',
                         filter: 'drop-shadow(20px 30px 40px rgba(0,0,0,0.2))'
                     }}>
-                        <PhoneMockup state="chat_welcome" />
+                        <PhoneMockup state="chat_welcome" preset="government" />
                     </div>
                 </div>
             </div>

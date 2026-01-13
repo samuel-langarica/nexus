@@ -1,5 +1,6 @@
 import React from 'react';
-import { TabletMockup, TerminalMockup } from './Mockups';
+import { TerminalMockup } from './Mockups';
+import tabletImage from '../assets/tablet.png';
 
 const EstablishmentView = () => {
     return (
@@ -27,7 +28,17 @@ const EstablishmentView = () => {
                     {/* Tablet del Staff */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
                         <div style={{ position: 'relative' }}>
-                            <TabletMockup />
+                            <img
+                                src={tabletImage}
+                                alt="Tablet del Staff"
+                                style={{
+                                    width: '420px',
+                                    height: 'auto',
+                                    maxWidth: '100%',
+                                    objectFit: 'contain',
+                                    filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3))'
+                                }}
+                            />
                             <div style={{
                                 position: 'absolute',
                                 bottom: '-20px',
